@@ -1,4 +1,4 @@
-#Economic Modeling: Greg Alward & Phil Watson
+# Economic Modeling: Greg Alward & Phil Watson
 
 This program fetches an impedance matrix and supply/demand data from a postgres database and runs a gravity model using these inputs. The program is setup to handle different impedance variables that are found in the db, and allows users to input the commodity id of interest.
 
