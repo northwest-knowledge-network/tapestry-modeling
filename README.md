@@ -4,6 +4,8 @@ This program fetches an impedance matrix and supply/demand data from a postgres 
 
 ## To run the program:
 - Clone the repository
+- Create a python virtual environment (`python -m venv venv/`)
+- Activate the virtual environment (`source venv/bin/activate`)
 - Install the requirements.txt file (`pip install -r requirements.txt`)
 - Create a .env file in the root directory with the following variables:
     - DB_HOST
