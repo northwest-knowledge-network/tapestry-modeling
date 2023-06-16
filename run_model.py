@@ -10,7 +10,7 @@ trade places.
 
 """
 
-from psycopg2 import sql
+#from psycopg2 import sql
 import pandas as pd
 from gravity_trade import GravityModel
 import argparse
@@ -103,7 +103,7 @@ def main(imp_matrix, trade_id):
     #print('TOTAL SHIPPED DEMAND: ', gravity_model.total_shipped_demand)
     if abs(gravity_model.total_shipped_supply - gravity_model.total_shipped_demand) > 1:
         print('ERROR: SUPPLY AND DEMAND NOT BALANCED FOR: TRADE ID {0}'.format(trade_id))
-    #pd.DataFrame(data=gravity_model.S).to_csv('/Users/tvarrelman/Documents/gravity_model/example_data/example_output/S_shipments_trip_matrix_{0}.csv'.format(trade_id))
+    pd.DataFrame(data=gravity_model.S).to_csv('/ramdisk/econ_out/S_shipments_trip_matrix_tci_{0}.csv'.format(trade_id))
     end_time = time.time()
     print('Runtime: ', end_time - start_time, ' seconds')
 
