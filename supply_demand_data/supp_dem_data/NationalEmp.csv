@@ -1,0 +1,820 @@
+﻿Num,Name,National Employment,Out/Emp,Color
+1111A0,Oilseed farming,"566,570",0.07478864,yellow
+1111B0,Grain farming,"99,577",0.844110588,yellow
+111200,Vegetable and melon farming,"375,640",0.038270685,yellow
+111300,Fruit and tree nut farming,"450,615",0.058784106,yellow
+111400,"Greenhouse, nursery, and floriculture production","854,785",0.025979632,yellow
+111900,Other crop farming,"148,451",0.186202855,yellow
+112120,Dairy cattle and milk production,"485,376",0.078316604,yellow
+1121A0,"Beef cattle ranching and farming, including feedlots and dual-purpose ranching and farming","397,397",0.196707575,yellow
+112300,Poultry and egg production,"126,277",0.306809633,yellow
+112A00,"Animal production, except cattle and poultry and eggs","561,052",0.058131867,yellow
+113000,Forestry and logging,"181,223",0.091053564,yellow
+114000,"Fishing, hunting and trapping","563,276",0.014852399,yellow
+115000,Support activities for agriculture and forestry,"120,560",0.190867618,yellow
+211000,Oil and gas extraction,"636,165",0.492312529,yellow
+212100,Coal mining,"884,656",0.049858928,yellow
+212230,"Copper, nickel, lead, and zinc mining","532,041",0.024099646,yellow
+2122A0,"Iron, gold, silver, and other metal ore mining","183,419",0.10882733,yellow
+212310,Stone mining and quarrying,"740,326",0.017100575,yellow
+2123A0,Other nonmetallic mineral mining and quarrying,"215,540",0.068906004,yellow
+213111,Drilling oil and gas wells,"160,188",0.294653782,yellow
+21311A,Other support activities for mining,"307,795",0.417761822,yellow
+221100,"Electric power generation, transmission, and distribution","583,662",0.622195723,yellow
+221200,Natural gas distribution,"163,693",0.488249345,yellow
+221300,"Water, sewage and other systems","501,855",0.027049646,yellow
+233210,Health care structures,"737,125",0.062610819,yellow
+233262,Educational and vocational structures,"673,138",0.12117129,yellow
+230301,Nonresidential maintenance and repair,"370,867",0.47250362,yellow
+230302,Residential maintenance and repair,"612,230",0.119481241,yellow
+2332A0,Office and commercial structures,"201,887",0.405335658,yellow
+233412,Multifamily residential structures,"109,239",0.253947766,yellow
+2334A0,Other residential structures,"579,708",0.291484678,yellow
+233230,Manufacturing structures,"506,650",0.096352512,yellow
+2332D0,Other nonresidential structures,"353,568",0.265032469,yellow
+233240,Power and communication structures,"394,541",0.287856015,yellow
+233411,Single-family residential structures,"154,036",0.863512426,yellow
+2332C0,Transportation structures and highways and streets,"793,687",0.153759605,yellow
+321100,Sawmills and wood preservation,"67,559",0.344350864,yellow
+321200,"Veneer, plywood, and engineered wood product manufacturing","726,495",0.023357353,yellow
+321910,Millwork,"889,788",0.022364878,yellow
+3219A0,All other wood product manufacturing,"592,257",0.031597769,yellow
+327100,Clay product and refractory manufacturing,"737,480",0.009326355,yellow
+327200,Glass and glass product manufacturing,"280,251",0.082336905,yellow
+327310,Cement manufacturing,"16,090",0.355935364,yellow
+327320,Ready-mix concrete manufacturing,"380,910",0.053091281,yellow
+327330,"Concrete pipe, brick, and block manufacturing","277,200",0.019256854,yellow
+327390,Other concrete product manufacturing,"261,356",0.032120938,yellow
+327400,Lime and gypsum product manufacturing,"553,748",0.010558955,yellow
+327910,Abrasive product manufacturing,"343,347",0.014778053,yellow
+327991,Cut stone and stone product manufacturing,"439,825",0.007937248,yellow
+327992,Ground or treated mineral and earth manufacturing,"570,583",0.006060468,yellow
+327993,Mineral wool manufacturing,"755,672",0.006317556,yellow
+327999,Miscellaneous nonmetallic mineral products,"371,634",0.01070408,yellow
+331110,Iron and steel mills and ferroalloy manufacturing,"210,578",0.533863936,yellow
+331200,Steel product manufacturing from purchased steel,"77,155",0.331009008,yellow
+331314,Secondary smelting and alloying of aluminum,"313,700",0.018262671,yellow
+331313,Alumina refining and primary aluminum production,"471,846",0.013720578,yellow
+33131B,Aluminum product manufacturing from purchased aluminum,"128,344",0.196253818,yellow
+331410,Nonferrous Metal (except Aluminum) Smelting and Refining,"76,972",0.190017149,yellow
+331420,"Copper rolling, drawing, extruding and alloying","141,327",0.164250285,yellow
+331490,"Nonferrous metal (except copper and aluminum) rolling, drawing, extruding and alloying","755,348",0.029971616,yellow
+331510,Ferrous metal foundries,"892,348",0.020905521,yellow
+331520,Nonferrous metal foundries,"402,667",0.031557093,yellow
+332114,Custom roll forming,"557,901",0.014864644,yellow
+33211A,"All other forging, stamping, and sintering","515,658",0.027586113,yellow
+332119,"Metal crown, closure, and other metal stamping (except automotive)","42,836",0.275119059,yellow
+332200,Cutlery and handtool manufacturing,"313,860",0.029134009,yellow
+332310,Plate work and fabricated structural product manufacturing,"10,342",3.740572423,yellow
+332320,Ornamental and architectural metal products manufacturing,"169,377",0.207371721,yellow
+332410,Power boiler and heat exchanger manufacturing,"475,207",0.014505258,yellow
+332420,Metal tank (heavy gauge) manufacturing,"407,633",0.022738591,yellow
+332430,"Metal can, box, and other metal container (light gauge) manufacturing","728,974",0.025489249,yellow
+332500,Hardware manufacturing,"251,429",0.028174952,yellow
+332600,Spring and wire product manufacturing,"238,175",0.034709772,yellow
+332710,Machine shops,"79,792",0.490713355,yellow
+332720,"Turned product and screw, nut, and bolt manufacturing","45,465",0.609567799,yellow
+332800,"Coating, engraving, heat treating and allied activities","172,972",0.156424161,yellow
+332913,Plumbing fixture fitting and trim manufacturing,"702,177",0.004719608,yellow
+33291A,Valve and fittings other than plumbing,"312,956",0.085785222,yellow
+332991,Ball and roller bearing manufacturing,"439,801",0.015736663,yellow
+332996,Fabricated pipe and pipe fitting manufacturing,"517,695",0.015547765,yellow
+33299A,"Ammunition, arms, ordnance, and accessories manufacturing","221,887",0.061936932,yellow
+332999,Other fabricated metal manufacturing,"632,564",0.022421447,yellow
+333111,Farm machinery and equipment manufacturing,"481,810",0.070228928,yellow
+333112,Lawn and garden equipment manufacturing,"473,680",0.015708917,yellow
+333120,Construction machinery manufacturing,"596,354",0.062994463,yellow
+333130,Mining and oil and gas field machinery manufacturing,"841,163",0.037253184,yellow
+333242,Semiconductor machinery manufacturing,"430,415",0.023272888,yellow
+33329A,Other industrial machinery manufacturing,"451,402",0.046156198,yellow
+333314,Optical instrument and lens manufacturing,"604,143",0.007988175,yellow
+333316,Photographic and photocopying equipment manufacturing,"854,553",0.002648168,yellow
+333318,Other commercial and service industry machinery manufacturing,"330,789",0.052148046,yellow
+333414,Heating equipment (except warm air furnaces) manufacturing,"772,295",0.006163448,yellow
+333415,"Air conditioning, refrigeration, and warm air heating equipment manufacturing","727,295",0.040720753,yellow
+333413,Industrial and commercial fan and blower and air purification equipment manufacturing,"338,664",0.017548367,yellow
+333511,Industrial mold manufacturing,"243,646",0.025044532,yellow
+333514,"Special tool, die, jig, and fixture manufacturing","90,903",0.078688272,yellow
+333517,Machine tool manufacturing,"676,602",0.011300587,yellow
+33351B,"Cutting and machine tool accessory, rolling mill, and other metalworking machinery manufacturing","546,355",0.015094581,yellow
+333611,Turbine and turbine generator set units manufacturing,"687,250",0.02420371,yellow
+333612,"Speed changer, industrial high-speed drive, and gear manufacturing","417,679",0.011228719,yellow
+333613,Mechanical power transmission equipment manufacturing,"41,856",0.100320145,yellow
+333618,Other engine equipment manufacturing,"140,483",0.196386751,yellow
+333912,Air and gas compressor manufacturing,"325,390",0.029785796,yellow
+33391A,Pump and pumping equipment manufacturing,"769,757",0.020416833,yellow
+333920,Material handling equipment manufacturing,"570,421",0.05136557,yellow
+333991,Power-driven handtool manufacturing,"1,595",2.278369906,yellow
+333993,Packaging machinery manufacturing,"442,138",0.012145529,yellow
+333994,Industrial process furnace and oven manufacturing,"451,660",0.005803038,yellow
+33399A,Other general purpose machinery manufacturing,"731,475",0.028107591,yellow
+33399B,Fluid power process machinery,"879,447",0.011631173,yellow
+334111,Electronic computer manufacturing,"696,372",0.013031828,yellow
+334112,Computer storage device manufacturing,"747,704",0.0108666,yellow
+334118,Computer terminals and other computer peripheral equipment manufacturing,"119,908",0.092937919,yellow
+334210,Telephone apparatus manufacturing,"208,180",0.046546258,yellow
+334220,Broadcast and wireless communications equipment,"145,692",0.203195783,yellow
+334290,Other communications equipment manufacturing,"624,788",0.007565766,yellow
+334413,Semiconductor and related device manufacturing,"99,118",0.479852297,yellow
+334418,Printed circuit assembly (electronic assembly) manufacturing,"542,173",0.030942153,yellow
+33441A,Other electronic component manufacturing,"525,984",0.045138255,yellow
+334510,Electromedical and electrotherapeutic apparatus manufacturing,"262,870",0.103785141,yellow
+334511,"Search, detection, and navigation instruments manufacturing","123,662",0.371326681,yellow
+334512,Automatic environmental control manufacturing,"898,039",0.002594542,yellow
+334513,Industrial process variable instruments manufacturing,"545,494",0.019483257,yellow
+334514,Totalizing fluid meter and counting device manufacturing,"53,006",0.124985851,yellow
+334515,Electricity and signal testing instruments manufacturing,"791,689",0.015362093,yellow
+334516,Analytical laboratory instrument manufacturing,"604,411",0.022307668,yellow
+334517,Irradiation apparatus manufacturing,"527,248",0.017191151,yellow
+33451A,"Watch, clock, and other measuring and controlling device manufacturing","653,330",0.017104679,yellow
+334300,Audio and video equipment manufacturing,"316,871",0.009246665,yellow
+334610,Manufacturing and reproducing magnetic and optical media,"542,764",0.005225107,yellow
+335110,Electric lamp bulb and part manufacturing,"539,528",0.00316017,yellow
+335120,Lighting fixture manufacturing,"613,507",0.016030787,yellow
+335210,Small electrical appliance manufacturing,"509,399",0.006258355,yellow
+335221,Household cooking appliance manufacturing,"94,413",0.044803152,yellow
+335222,Household refrigerator and home freezer manufacturing,"688,935",0.005125302,yellow
+335224,Household laundry equipment manufacturing,"218,344",0.016341186,yellow
+335228,Other major household appliance manufacturing,"661,735",0.006759503,yellow
+335311,"Power, distribution, and specialty transformer manufacturing","76,190",0.074419215,yellow
+335312,Motor and generator manufacturing,"191,692",0.057790622,yellow
+335313,Switchgear and switchboard apparatus manufacturing,"786,641",0.013492813,yellow
+335314,Relay and industrial control manufacturing,"333,573",0.028011859,yellow
+335911,Storage battery manufacturing,"239,258",0.026456796,yellow
+335912,Primary battery manufacturing,"107,074",0.041335899,yellow
+335920,Communication and energy wire and cable manufacturing,"739,918",0.020153585,yellow
+335930,Wiring device manufacturing,"17,438",0.711205413,yellow
+335991,Carbon and graphite product manufacturing,"476,829",0.006918623,yellow
+335999,All other miscellaneous electrical equipment and component manufacturing,"855,002",0.011633891,yellow
+336111,Automobile manufacturing,"67,733",0.840919493,yellow
+336112,Light truck and utility vehicle manufacturing,"236,485",0.721394592,yellow
+336120,Heavy duty truck manufacturing,"295,731",0.103949197,yellow
+336211,Motor vehicle body manufacturing,"460,635",0.023960402,yellow
+336212,Truck trailer manufacturing,"383,462",0.020666976,yellow
+336213,Motor home manufacturing,"251,383",0.008894794,yellow
+336214,Travel trailer and camper manufacturing,"847,558",0.012140762,yellow
+336310,Motor vehicle gasoline engine and engine parts manufacturing,"256,602",0.111632022,yellow
+336320,Motor vehicle electrical and electronic equipment manufacturing,"337,543",0.055471451,yellow
+336350,Motor vehicle transmission and power train parts manufacturing,"441,653",0.077599382,yellow
+336360,Motor vehicle seating and interior trim manufacturing,"307,223",0.072100722,yellow
+336370,Motor vehicle metal stamping,"876,343",0.033113747,yellow
+336390,Other Motor Vehicle Parts Manufacturing,"780,856",0.069682502,yellow
+3363A0,"Motor vehicle steering, suspension component (except spring), and brake systems manufacturing","819,844",0.026928294,yellow
+336411,Aircraft manufacturing,"457,810",0.233343527,yellow
+336412,Aircraft engine and engine parts manufacturing,"87,548",0.474082789,yellow
+336413,Other aircraft parts and auxiliary equipment manufacturing,"255,820",0.13145962,yellow
+336414,Guided missile and space vehicle manufacturing,"164,305",0.104092998,yellow
+33641A,Propulsion units and parts for space vehicles and guided missiles,"8,551",0.549760262,yellow
+336500,Railroad rolling stock manufacturing,"155,873",0.103436772,yellow
+336611,Ship building and repairing,"623,987",0.034741108,yellow
+336612,Boat building,"86,689",0.077795337,yellow
+336991,"Motorcycle, bicycle, and parts manufacturing","112,245",0.051628135,yellow
+336992,"Military armored vehicle, tank, and tank component manufacturing","570,086",0.009588027,yellow
+336999,All other transportation equipment manufacturing,"691,579",0.010058142,yellow
+337110,Wood kitchen cabinet and countertop manufacturing,"66,835",0.166020797,yellow
+337121,Upholstered household furniture manufacturing,"390,740",0.023460613,yellow
+337122,Nonupholstered wood household furniture manufacturing,"228,702",0.017708634,yellow
+337127,Institutional furniture manufacturing,"166,619",0.02713376,yellow
+33712N,Other household nonupholstered furniture,"360,658",0.007358772,yellow
+337215,"Showcase, partition, shelving, and locker manufacturing","664,994",0.009639185,yellow
+33721A,Office furniture and custom architectural woodwork and millwork manufacturing,"648,978",0.024432261,yellow
+337900,Other furniture related product manufacturing,"310,718",0.030519635,yellow
+339112,Surgical and medical instrument manufacturing,"565,834",0.064153091,yellow
+339113,Surgical appliance and supplies manufacturing,"552,441",0.058659658,yellow
+339114,Dental equipment and supplies manufacturing,"754,533",0.005409969,yellow
+339115,Ophthalmic goods manufacturing,"344,824",0.020828017,yellow
+339116,Dental laboratories,"553,342",0.008510108,yellow
+339910,Jewelry and silverware manufacturing,"240,074",0.046818898,yellow
+339920,Sporting and athletic goods manufacturing,"326,265",0.028872236,yellow
+339930,"Doll, toy, and game manufacturing","587,134",0.003011238,yellow
+339940,Office supplies (except paper) manufacturing,"820,603",0.00371556,yellow
+339950,Sign manufacturing,"479,433",0.021779894,yellow
+339990,All other miscellaneous manufacturing,"817,658",0.031647706,yellow
+311111,Dog and cat food manufacturing,"358,585",0.052263759,yellow
+311119,Other animal food manufacturing,"543,065",0.068571902,yellow
+311210,Flour milling and malt manufacturing,"40,870",0.489576707,yellow
+311221,Wet corn milling,"846,176",0.015065424,yellow
+311225,Fats and oils refining and blending,"817,307",0.020070793,yellow
+311224,Soybean and other oilseed processing,"596,962",0.067480007,yellow
+311230,Breakfast cereal manufacturing,"274,937",0.03930355,yellow
+311300,Sugar and confectionery product manufacturing,"4,756",6.863961312,yellow
+311410,Frozen food manufacturing,"292,525",0.102654474,yellow
+311420,"Fruit and vegetable canning, pickling, and drying","824,058",0.039803024,yellow
+311513,Cheese manufacturing,"232,618",0.173993414,yellow
+311514,"Dry, condensed, and evaporated dairy product manufacturing","876,761",0.029088885,yellow
+31151A,Fluid milk and butter manufacturing,"150,984",0.243853653,yellow
+311520,Ice cream and frozen dessert manufacturing,"548,136",0.012139323,yellow
+311615,Poultry processing,"887,461",0.064920036,yellow
+31161A,"Animal (except poultry) slaughtering, rendering, and processing","243,139",0.578763588,yellow
+311700,Seafood product preparation and packaging,"771,404",0.013739882,yellow
+311810,Bread and bakery product manufacturing,"732,705",0.06386745,yellow
+3118A0,"Cookie, cracker, pasta, and tortilla manufacturing","784,795",0.034049656,yellow
+311910,Snack food manufacturing,"818,617",0.038423341,yellow
+311920,Coffee and tea manufacturing,"322,391",0.039954589,yellow
+311930,Flavoring syrup and concentrate manufacturing,"583,989",0.014916377,yellow
+311940,Seasoning and dressing manufacturing,"303,132",0.06153095,yellow
+311990,All other food manufacturing,"789,319",0.027437576,yellow
+312110,Soft drink and ice manufacturing,"224,161",0.198500185,yellow
+312120,Breweries,"613,758",0.050541093,yellow
+312130,Wineries,"55,120",0.293613933,yellow
+312140,Distilleries,"397,684",0.036292634,yellow
+312200,Tobacco product manufacturing,"742,798",0.076281842,yellow
+313100,"Fiber, yarn, and thread mills","540,947",0.014180687,yellow
+313200,Fabric mills,"403,950",0.036014358,yellow
+313300,Textile and fabric finishing and fabric coating mills,"198,303",0.036630812,yellow
+314110,Carpet and rug mills,"16,929",0.52891488,yellow
+314120,Curtain and linen mills,"338,471",0.010296303,yellow
+314900,Other textile product mills,"447,706",0.019646822,yellow
+315000,Apparel manufacturing,"368,370",0.034720526,yellow
+316000,Leather and allied product manufacturing,"818,372",0.008353169,yellow
+322110,Pulp mills,"787,645",0.007590983,yellow
+322120,Paper mills,"262,097",0.178315662,yellow
+322130,Paperboard mills,"455,172",0.061897481,yellow
+322210,Paperboard container manufacturing,"395,915",0.13163179,yellow
+322220,Paper Bag and Coated and Treated Paper Manufacturing,"251,569",0.082939472,yellow
+322230,Stationery product manufacturing,"803,586",0.008982237,yellow
+322291,Sanitary paper product manufacturing,"91,059",0.13079432,yellow
+322299,All other converted paper product manufacturing,"855,142",0.005801376,yellow
+323110,Printing,"285,832",0.29371449,yellow
+323120,Support activities for printing,"393,560",0.009744385,yellow
+324110,Petroleum refineries,"117,477",6.630906475,yellow
+324121,Asphalt paving mixture and block manufacturing,"356,246",0.036772343,yellow
+324122,Asphalt shingle and coating materials manufacturing,"897,175",0.01166662,yellow
+324190,Other petroleum and coal products manufacturing,"215,919",0.114811573,yellow
+325110,Petrochemical manufacturing,"720,827",0.111398435,yellow
+325120,Industrial gas manufacturing,"562,922",0.011184498,yellow
+325130,Synthetic dye and pigment manufacturing,"516,492",0.017400076,yellow
+325180,Other Basic Inorganic Chemical Manufacturing,"446,799",0.07568504,yellow
+325190,Other basic organic chemical manufacturing,"738,421",0.186905573,yellow
+325211,Plastics material and resin manufacturing,"760,627",0.118294512,yellow
+3252A0,Synthetic rubber and artificial and synthetic fibers and filaments manufacturing,"542,826",0.032128159,yellow
+325411,Medicinal and botanical manufacturing,"827,147",0.014849839,yellow
+325412,Pharmaceutical preparation manufacturing,"189,315",0.630509997,yellow
+325413,In-vitro diagnostic substance manufacturing,"579,285",0.020970679,yellow
+325414,Biological product (except diagnostic) manufacturing,"11,884",2.071440592,yellow
+325310,Fertilizer manufacturing,"728,640",0.035525088,yellow
+325320,Pesticide and other agricultural chemical manufacturing,"201,160",0.073389342,yellow
+325510,Paint and coating manufacturing,"273,632",0.084050842,yellow
+325520,Adhesive manufacturing,"142,633",0.08116635,yellow
+325610,Soap and cleaning compound manufacturing,"523,125",0.083869056,yellow
+325620,Toilet preparation manufacturing,"830,737",0.038129998,yellow
+325910,Printing ink manufacturing,"295,596",0.016140273,yellow
+3259A0,All other chemical product and preparation manufacturing,"121,844",0.321755688,yellow
+326110,Plastics packaging materials and unlaminated film and sheet manufacturing,"755,092",0.051285141,yellow
+326120,"Plastics pipe, pipe fitting, and unlaminated profile shape manufacturing","874,290",0.017366091,yellow
+326130,"Laminated plastics plate, sheet (except packaging), and shape manufacturing","191,394",0.018114465,yellow
+326140,Polystyrene foam product manufacturing,"486,135",0.016526274,yellow
+326150,Urethane and other foam product (except polystyrene) manufacturing,"403,238",0.022926907,yellow
+326160,Plastics bottle manufacturing,"466,813",0.02613252,yellow
+326190,Other plastics product manufacturing,"255,849",0.31995044,yellow
+326210,Tire manufacturing,"515,836",0.039452462,yellow
+326220,Rubber and plastics hoses and belting manufacturing,"845,913",0.005984067,yellow
+326290,Other rubber product manufacturing,"843,269",0.020561648,yellow
+423100,Motor vehicle and motor vehicle parts and supplies,"809,392",0.127851523,yellow
+423400,Professional and commercial equipment and supplies,"527,239",0.35991078,yellow
+423600,Household appliances and electrical and electronic goods ,"861,296",0.167535899,yellow
+423800,"Machinery, equipment, and supplies","727,549",0.217945458,yellow
+423A00,Other durable goods merchant wholesalers,"881,599",0.26564345,yellow
+424200,Drugs and druggists’ sundries,"129,083",1.055475934,yellow
+424400,Grocery and related product wholesalers ,"489,375",0.271386973,yellow
+424700,Petroleum and petroleum products,"827,273",0.194278068,yellow
+424A00,Other nondurable goods merchant wholesalers,"544,822",0.549107782,yellow
+425000,Wholesale electronic markets and agents and brokers,"424,485",0.137510159,yellow
+4200ID,Customs duties,"790,671",0.042372871,yellow
+441000,Motor vehicle and parts dealers,"640,282",0.239711565,yellow
+445000,Food and beverage stores,"294,470",0.627809284,yellow
+452000,General merchandise stores,"304,397",0.654135882,yellow
+444000,Building material and garden equipment and supplies dealers,"659,972",0.168645033,yellow
+446000,Health and personal care stores,"826,202",0.115905069,yellow
+447000,Gasoline stations,"377,560",0.180535544,yellow
+448000,Clothing and clothing accessories stores,"662,333",0.186410763,yellow
+454000,Nonstore retailers,"689,216",0.230620009,yellow
+4B0000,All other retail,"254,234",0.72836442,yellow
+481000,Air transportation,"376,748",0.516897236,yellow
+482000,Rail transportation,"181,306",0.428937818,yellow
+483000,Water transportation,"602,193",0.081274608,yellow
+484000,Truck transportation,"819,618",0.35842551,yellow
+485000,Transit and ground passenger transportation,"294,374",0.173330525,yellow
+486000,Pipeline transportation,"509,861",0.077940851,yellow
+48A000,Scenic and sightseeing transportation and support activities for transportation,"308,258",0.38250751,yellow
+492000,Couriers and messengers,"383,253",0.193076114,yellow
+493000,Warehousing and storage,"330,250",0.33948221,yellow
+511110,Newspaper publishers,"637,867",0.045169291,yellow
+511120,Periodical Publishers,"598,498",0.049659314,yellow
+511130,Book publishers,"831,558",0.043524324,yellow
+5111A0,"Directory, mailing list, and other publishers","192,251",0.085773286,yellow
+511200,Software publishers,"712,714",0.214662543,yellow
+512100,Motion picture and video industries,"441,128",0.261661014,yellow
+512200,Sound recording industries,"461,094",0.031650813,yellow
+515100,Radio and television broadcasting,"688,073",0.107965289,yellow
+515200,Cable and other subscription programming,"460,379",0.169764477,yellow
+517110,Wired telecommunications carriers,"623,827",0.476351617,yellow
+517210,Wireless telecommunications carriers (except satellite),"383,104",0.586945059,yellow
+517A00,"Satellite, telecommunications resellers, and all other telecommunications","807,148",0.045028917,yellow
+518200,"Data processing, hosting, and related services","828,036",0.142284877,yellow
+519130,Internet publishing and broadcasting and Web search portals,"897,730",0.098127499,yellow
+5191A0,"News syndicates, libraries, archives and all other information services","790,708",0.008623917,yellow
+522A00,Nondepository credit intermediation and related activities,"577,513",0.524857449,yellow
+52A000,Monetary authorities and depository credit intermediation,"391,694",1.172228832,yellow
+523900,Other financial investment activities,"113,925",2.4466535,yellow
+523A00,Securities and commodity contracts intermediation and brokerage,"147,611",1.351315281,yellow
+524113,Direct life insurance carriers,"564,696",0.144438778,yellow
+5241XX,"Insurance carriers, except direct life","572,464",0.746406761,yellow
+524200,"Insurance agencies, brokerages, and related activities","119,005",2.389546658,yellow
+525000,"Funds, trusts, and other financial vehicles","586,458",0.238265997,yellow
+531HSO,Owner-occupied housing,"876,750",1.50641574,yellow
+531HST,Tenant-occupied housing,"593,400",0.663340074,yellow
+531ORE,Other real estate,"328,807",2.713686144,yellow
+532100,Automotive equipment rental and leasing,"259,549",0.206635356,yellow
+532400,Commercial and industrial machinery and equipment rental and leasing,"588,123",0.131963892,yellow
+532A00,General and consumer goods rental,"362,116",0.103403329,yellow
+533000,Lessors of nonfinancial intangible assets,"277,617",0.564255791,yellow
+541100,Legal services,"88,938",3.45134813,yellow
+541511,Custom computer programming services,"620,803",0.317166637,yellow
+541512,Computer systems design services,"428,587",0.355913735,yellow
+54151A,"Other computer related services, including facilities management","179,273",0.330507104,yellow
+541200,"Accounting, tax preparation, bookkeeping, and payroll services","803,303",0.196171308,yellow
+541300,"Architectural, engineering, and related services","607,383",0.464991612,yellow
+541610,Management consulting services,"234,253",0.843912351,yellow
+5416A0,Environmental and other technical consulting services,"806,067",0.053888821,yellow
+541700,Scientific research and development services,"223,274",2.142815554,yellow
+541800,"Advertising, public relations, and related services","859,715",0.139982436,yellow
+541400,Specialized design services,"742,074",0.034388754,yellow
+541920,Photographic services,"326,810",0.034494049,yellow
+541940,Veterinary services,"873,169",0.029225728,yellow
+5419A0,"All other miscellaneous professional, scientific, and technical services ","98,872",0.808054859,yellow
+550000,Management of companies and enterprises,"870,980",0.534596661,yellow
+561300,Employment services,"332,690",0.740758664,yellow
+561700,Services to buildings and dwellings,"249,722",0.570190051,yellow
+561100,Office administrative services,"552,502",0.088168007,yellow
+561200,Facilities support services,"489,467",0.053276319,yellow
+561400,Business support services,"46,717",1.46518398,yellow
+561500,Travel arrangement and reservation services,"479,424",0.078592227,yellow
+561600,Investigation and security services,"231,868",0.218736523,yellow
+561900,Other support services,"493,271",0.087039376,yellow
+562000,Waste management and remediation services,"737,534",0.112354142,yellow
+611100,Elementary and secondary schools,"519,156",0.067189823,yellow
+611A00,"Junior colleges, colleges, universities, and professional schools","158,464",0.916492074,yellow
+611B00,Other educational services,"795,845",0.082331358,yellow
+621100,Offices of physicians,"313,886",1.319921882,yellow
+621200,Offices of dentists,"326,211",0.329388034,yellow
+621300,Offices of other health practitioners,"40,417",2.052131529,yellow
+621400,Outpatient care centers,"530,544",0.188106924,yellow
+621500,Medical and diagnostic laboratories,"159,539",0.324641624,yellow
+621600,Home health care services,"157,180",0.475264029,yellow
+621900,Other ambulatory health care services,"354,033",0.092211743,yellow
+622000,Hospitals,"697,198",0.996260747,yellow
+623A00,Nursing and community care facilities,"456,415",0.364405201,yellow
+623B00,"Residential mental health, substance abuse, and other residential care facilities","74,722",0.552327293,yellow
+624100,Individual and family services,"538,106",0.153761527,yellow
+624400,Child day care services,"852,993",0.054132918,yellow
+624A00,"Community food, housing, and other relief services, including rehabilitation services","307,949",0.141539671,yellow
+711100,Performing arts companies,"294,115",0.072750455,yellow
+711200,Spectator sports,"148,733",0.203714038,yellow
+711500,"Independent artists, writers, and performers","24,895",1.440088371,yellow
+711A00,Promoters of performing arts and sports and agents for public figures,"739,293",0.043072233,yellow
+712000,"Museums, historical sites, zoos, and parks","481,282",0.027493237,yellow
+713100,Amusement parks and arcades,"645,213",0.018759696,yellow
+713200,Gambling industries (except casino hotels),"723,227",0.085895576,yellow
+713900,Other amusement and recreation industries,"253,742",0.244914125,yellow
+721000,Accommodation,"660,524",0.263766343,yellow
+722110,Full-service restaurants,"561,718",0.49810047,yellow
+722211,Limited-service restaurants,"852,577",0.353305332,yellow
+722A00,All other food and drinking places,"288,868",0.512372433,yellow
+811100,Automotive repair and maintenance,"412,206",0.450670296,yellow
+811200,Electronic and precision equipment repair and maintenance,"596,116",0.079346973,yellow
+811300,Commercial and industrial machinery and equipment repair and maintenance,"224,401",0.265952469,yellow
+811400,Personal and household goods repair and maintenance,"736,415",0.043470054,yellow
+812100,Personal care services,"809,186",0.083681626,yellow
+812200,Death care services,"359,082",0.053522594,yellow
+812300,Dry-cleaning and laundry services,"173,412",0.148467234,yellow
+812900,Other personal services,"782,461",0.077982161,yellow
+813100,Religious organizations,"142,834",0.576816444,yellow
+813A00,"Grantmaking, giving, and social advocacy organizations","697,654",0.062959576,yellow
+813B00,"Civic, social, professional, and similar organizations","34,141",2.130927624,yellow
+814000,Private households,"870,274",0.019913269,yellow
+S00500,Federal general government (defense),"676,068",0.961941698,yellow
+S00600,Federal general government (nondefense),"704,836",0.499808466,yellow
+491000,Postal service,"873,744",0.070802203,yellow
+S00101,Federal electric utilities,"338,920",0.039437035,yellow
+S00102,Other federal government enterprises,"70,743",0.251699815,yellow
+GSLGE,State and local government educational services,"203,467",3.986789012,yellow
+GSLGH,State and local government hospitals and health services,"240,264",0.975697566,yellow
+GSLGO,State and local government other services,"65,302",11.58338183,yellow
+S00201,State and local government passenger transit,"163,622",0.090042904,yellow
+S00202,State and local government electric utilities,"464,518",0.128444969,yellow
+S00203,Other state and local government enterprises,"783,870",0.285685126,yellow
+1111A0,Oilseed farming,"570,437",0.074963576,green
+1111B0,Grain farming,"107,746",0.792570241,green
+111200,Vegetable and melon farming,"378,578",0.052987747,green
+111300,Fruit and tree nut farming,"453,591",0.088791377,green
+111400,"Greenhouse, nursery, and floriculture production","857,174",0.028040979,green
+111900,Other crop farming,"157,210",0.17960707,green
+112120,Dairy cattle and milk production,"491,041",0.075761471,green
+1121A0,"Beef cattle ranching and farming, including feedlots and dual-purpose ranching and farming","405,365",0.194607137,green
+112300,Poultry and egg production,"131,572",0.289188696,green
+112A00,"Animal production, except cattle and poultry and eggs","563,408",0.062217765,green
+113000,Forestry and logging,"175,153",0.122076116,green
+114000,"Fishing, hunting and trapping","545,350",0.037596058,green
+115000,Support activities for agriculture and forestry,"96,243",0.300250225,green
+211000,Oil and gas extraction,"665,036",0.942146887,green
+212100,Coal mining,"885,026",0.050563509,green
+212230,"Copper, nickel, lead, and zinc mining","523,118",0.021538177,green
+2122A0,"Iron, gold, silver, and other metal ore mining","192,356",0.070931109,green
+212310,Stone mining and quarrying,"739,487",0.017437763,green
+2123A0,Other nonmetallic mineral mining and quarrying,"234,589",0.069610993,green
+213111,Drilling oil and gas wells,"158,117",0.300765172,green
+21311A,Other support activities for mining,"316,307",0.405943846,green
+221100,"Electric power generation, transmission, and distribution","497,133",0.866846631,green
+221200,Natural gas distribution,"139,091",0.676053874,green
+221300,"Water, sewage and other systems","91,444",0.759810426,green
+233210,Health care structures,"737,125",0.062612176,green
+233262,Educational and vocational structures,"673,138",0.12117129,green
+230301,Nonresidential maintenance and repair,"368,882",0.477624371,green
+230302,Residential maintenance and repair,"612,088",0.119536782,green
+2332A0,Office and commercial structures,"203,872",0.39676352,green
+233412,Multifamily residential structures,"109,239",0.253938612,green
+2334A0,Other residential structures,"579,708",0.291484678,green
+233230,Manufacturing structures,"506,650",0.096352512,green
+2332D0,Other nonresidential structures,"353,568",0.265032469,green
+233240,Power and communication structures,"394,541",0.287856015,green
+233411,Single-family residential structures,"154,178",0.862605466,green
+2332C0,Transportation structures and highways and streets,"793,687",0.153759605,green
+321100,Sawmills and wood preservation,"87,889",0.344025063,green
+321200,"Veneer, plywood, and engineered wood product manufacturing","714,105",0.030061409,green
+321910,Millwork,"884,477",0.021604866,green
+3219A0,All other wood product manufacturing,"586,257",0.037393142,green
+327100,Clay product and refractory manufacturing,"704,951",0.018936063,green
+327200,Glass and glass product manufacturing,"291,049",0.100797338,green
+327310,Cement manufacturing,"19,252",0.326091356,green
+327320,Ready-mix concrete manufacturing,"394,524",0.050481108,green
+327330,"Concrete pipe, brick, and block manufacturing","274,447",0.019573919,green
+327390,Other concrete product manufacturing,"265,149",0.035432929,green
+327400,Lime and gypsum product manufacturing,"546,525",0.011031512,green
+327910,Abrasive product manufacturing,"343,661",0.019603637,green
+327991,Cut stone and stone product manufacturing,"423,109",0.014582536,green
+327992,Ground or treated mineral and earth manufacturing,"584,509",0.006285612,green
+327993,Mineral wool manufacturing,"741,172",0.007323533,green
+327999,Miscellaneous nonmetallic mineral products,"363,324",0.012344343,green
+331110,Iron and steel mills and ferroalloy manufacturing,"280,862",0.590040377,green
+331200,Steel product manufacturing from purchased steel,"99,865",0.137305609,green
+331313,Alumina refining and primary aluminum production,"142,024",0.133765665,green
+33131B,Aluminum product manufacturing from purchased aluminum,"162,600",0.178296926,green
+331410,Nonferrous Metal (except Aluminum) Smelting and Refining,"474,604",0.101604619,green
+331420,"Copper rolling, drawing, extruding and alloying","78,115",0.328374496,green
+331490,"Nonferrous metal (except copper and aluminum) rolling, drawing, extruding and alloying","90,286",0.180924088,green
+331510,Ferrous metal foundries,"189,823",0.104871202,green
+331520,Nonferrous metal foundries,"754,074",0.01677555,green
+332114,Custom roll forming,"885,162",0.0092887,green
+33211A,"All other forging, stamping, and sintering","392,354",0.038702325,green
+332119,"Metal crown, closure, and other metal stamping (except automotive)","516,339",0.023211501,green
+332200,Cutlery and handtool manufacturing,"489,289",0.03241031,green
+332310,Plate work and fabricated structural product manufacturing,"72,912",0.566396822,green
+332320,Ornamental and architectural metal products manufacturing,"334,312",0.108120625,green
+332410,Power boiler and heat exchanger manufacturing,"96,925",0.086365429,green
+332420,Metal tank (heavy gauge) manufacturing,"172,784",0.059299435,green
+332430,"Metal can, box, and other metal container (light gauge) manufacturing","460,587",0.04126473,green
+332500,Hardware manufacturing,"410,957",0.032857449,green
+332600,Spring and wire product manufacturing,"654,333",0.011257269,green
+332710,Machine shops,"269,730",0.147925661,green
+332720,"Turned product and screw, nut, and bolt manufacturing","255,386",0.126612019,green
+332800,"Coating, engraving, heat treating and allied activities","102,288",0.267129213,green
+332913,Plumbing fixture fitting and trim manufacturing,"47,743",0.088683264,green
+33291A,Valve and fittings other than plumbing,"172,899",0.234027088,green
+332991,Ball and roller bearing manufacturing,"782,138",0.012992595,green
+332996,Fabricated pipe and pipe fitting manufacturing,"321,989",0.025165443,green
+33299A,"Ammunition, arms, ordnance, and accessories manufacturing","428,017",0.038243849,green
+332999,Other fabricated metal manufacturing,"514,123",0.044384354,green
+333111,Farm machinery and equipment manufacturing,"240,266",0.183155679,green
+333112,Lawn and garden equipment manufacturing,"636,904",0.011361203,green
+333120,Construction machinery manufacturing,"469,201",0.114961409,green
+333130,Mining and oil and gas field machinery manufacturing,"460,724",0.074283136,green
+333242,Semiconductor machinery manufacturing,"598,448",0.024663803,green
+33329A,Other industrial machinery manufacturing,"837,740",0.04007448,green
+333314,Optical instrument and lens manufacturing,"435,658",0.022754089,green
+333316,Photographic and photocopying equipment manufacturing,"412,308",0.005750551,green
+333318,Other commercial and service industry machinery manufacturing,"586,224",0.040832537,green
+333414,Heating equipment (except warm air furnaces) manufacturing,"839,573",0.006796309,green
+333415,"Air conditioning, refrigeration, and warm air heating equipment manufacturing","325,297",0.117086931,green
+333413,Industrial and commercial fan and blower and air purification equipment manufacturing,"783,122",0.009926932,green
+333511,Industrial mold manufacturing,"707,227",0.011549329,green
+333514,"Special tool, die, jig, and fixture manufacturing","299,688",0.031606212,green
+333517,Machine tool manufacturing,"211,578",0.070626512,green
+33351B,"Cutting and machine tool accessory, rolling mill, and other metalworking machinery manufacturing","117,437",0.095480725,green
+333611,Turbine and turbine generator set units manufacturing,"618,462",0.037379853,green
+333612,"Speed changer, industrial high-speed drive, and gear manufacturing","498,492",0.017815723,green
+333613,Mechanical power transmission equipment manufacturing,"691,980",0.010169367,green
+333618,Other engine equipment manufacturing,"406,616",0.102814432,green
+333912,Air and gas compressor manufacturing,"52,528",0.237357626,green
+33391A,Pump and pumping equipment manufacturing,"141,920",0.144328201,green
+333920,Material handling equipment manufacturing,"326,731",0.107534819,green
+333991,Power-driven handtool manufacturing,"761,430",0.009423063,green
+333993,Packaging machinery manufacturing,"552,122",0.014185261,green
+333994,Industrial process furnace and oven manufacturing,"4,255",0.773226201,green
+33399A,Other general purpose machinery manufacturing,"440,721",0.072401827,green
+33399B,Fluid power process machinery,"463,299",0.034485307,green
+334111,Electronic computer manufacturing,"675,554",0.097271268,green
+334112,Computer storage device manufacturing,"904,722",0.018322761,green
+334118,Computer terminals and other computer peripheral equipment manufacturing,"654,861",0.067483029,green
+334210,Telephone apparatus manufacturing,"749,563",0.027933623,green
+334220,Broadcast and wireless communications equipment,"158,437",0.597013115,green
+334290,Other communications equipment manufacturing,"237,040",0.023810346,green
+334413,Semiconductor and related device manufacturing,"144,770",0.494806647,green
+334418,Printed circuit assembly (electronic assembly) manufacturing,"672,456",0.024910192,green
+33441A,Other electronic component manufacturing,"125,400",0.32841998,green
+334510,Electromedical and electrotherapeutic apparatus manufacturing,"524,173",0.06763039,green
+334511,"Search, detection, and navigation instruments manufacturing","521,325",0.098522023,green
+334512,Automatic environmental control manufacturing,"323,496",0.010908955,green
+334513,Industrial process variable instruments manufacturing,"110,263",0.141942522,green
+334514,Totalizing fluid meter and counting device manufacturing,"873,405",0.00967363,green
+334515,Electricity and signal testing instruments manufacturing,"530,757",0.033131917,green
+334516,Analytical laboratory instrument manufacturing,"83,113",0.221253924,green
+334517,Irradiation apparatus manufacturing,"774,948",0.015553301,green
+33451A,"Watch, clock, and other measuring and controlling device manufacturing","598,416",0.030702706,green
+334300,Audio and video equipment manufacturing,"508,129",0.084295586,green
+334610,Manufacturing and reproducing magnetic and optical media,"634,022",0.00639095,green
+335110,Electric lamp bulb and part manufacturing,"209,660",0.020037183,green
+335120,Lighting fixture manufacturing,"490,808",0.03834291,green
+335210,Small electrical appliance manufacturing,"537,059",0.025034481,green
+335221,Household cooking appliance manufacturing,"596,899",0.013851583,green
+335222,Household refrigerator and home freezer manufacturing,"488,653",0.015870168,green
+335224,Household laundry equipment manufacturing,"95,582",0.060838045,green
+335228,Other major household appliance manufacturing,"679,039",0.008887564,green
+335311,"Power, distribution, and specialty transformer manufacturing","227,280",0.037865121,green
+335312,Motor and generator manufacturing,"637,434",0.032891228,green
+335313,Switchgear and switchboard apparatus manufacturing,"102,661",0.14141696,green
+335314,Relay and industrial control manufacturing,"228,386",0.075796993,green
+335911,Storage battery manufacturing,"725,273",0.013808592,green
+335912,Primary battery manufacturing,"332,882",0.015032351,green
+335920,Communication and energy wire and cable manufacturing,"239,802",0.088214627,green
+335930,Wiring device manufacturing,"117,865",0.12652629,green
+335991,Carbon and graphite product manufacturing,"733,222",0.00599955,green
+335999,All other miscellaneous electrical equipment and component manufacturing,"17,356",0.983835602,green
+336111,Automobile manufacturing,"475,125",0.303117928,green
+336112,Light truck and utility vehicle manufacturing,"834,861",0.294077738,green
+336120,Heavy duty truck manufacturing,"67,736",0.664847574,green
+336211,Motor vehicle body manufacturing,"211,262",0.034506899,green
+336212,Truck trailer manufacturing,"317,790",0.028226155,green
+336213,Motor home manufacturing,"454,970",0.005697078,green
+336214,Travel trailer and camper manufacturing,"348,181",0.030690914,green
+336310,Motor vehicle gasoline engine and engine parts manufacturing,"291,007",0.15138145,green
+336320,Motor vehicle electrical and electronic equipment manufacturing,"826,038",0.039881941,green
+336350,Motor vehicle transmission and power train parts manufacturing,"281,763",0.18533637,green
+336360,Motor vehicle seating and interior trim manufacturing,"347,518",0.083895048,green
+336370,Motor vehicle metal stamping,"438,755",0.064963361,green
+336390,Other Motor Vehicle Parts Manufacturing,"340,133",0.24441618,green
+3363A0,"Motor vehicle steering, suspension component (except spring), and brake systems manufacturing","897,774",0.036415612,green
+336411,Aircraft manufacturing,"747,011",0.149719275,green
+336412,Aircraft engine and engine parts manufacturing,"828,814",0.065662517,green
+336413,Other aircraft parts and auxiliary equipment manufacturing,"506,579",0.09203898,green
+336414,Guided missile and space vehicle manufacturing,"117,946",0.152850047,green
+33641A,Propulsion units and parts for space vehicles and guided missiles,"251,432",0.023584924,green
+336500,Railroad rolling stock manufacturing,"128,999",0.15163647,green
+336611,Ship building and repairing,"11,297",1.973909405,green
+336612,Boat building,"157,355",0.048946736,green
+336991,"Motorcycle, bicycle, and parts manufacturing","621,177",0.017909536,green
+336992,"Military armored vehicle, tank, and tank component manufacturing","88,038",0.074411002,green
+336999,All other transportation equipment manufacturing,"105,901",0.069394713,green
+337110,Wood kitchen cabinet and countertop manufacturing,"565,391",0.020449559,green
+337121,Upholstered household furniture manufacturing,"692,778",0.018062062,green
+337122,Nonupholstered wood household furniture manufacturing,"107,050",0.126698071,green
+337127,Institutional furniture manufacturing,"353,711",0.028675964,green
+33712N,Other household nonupholstered furniture,"232,624",0.025380006,green
+337215,"Showcase, partition, shelving, and locker manufacturing","167,521",0.068260177,green
+33721A,Office furniture and custom architectural woodwork and millwork manufacturing,"334,520",0.050983574,green
+337900,Other furniture related product manufacturing,"679,760",0.016249844,green
+339112,Surgical and medical instrument manufacturing,"632,554",0.072729021,green
+339113,Surgical appliance and supplies manufacturing,"318,734",0.139062858,green
+339114,Dental equipment and supplies manufacturing,"570,328",0.009990734,green
+339115,Ophthalmic goods manufacturing,"518,822",0.021082356,green
+339116,Dental laboratories,"750,498",0.006103949,green
+339910,Jewelry and silverware manufacturing,"362,894",0.069199287,green
+339920,Sporting and athletic goods manufacturing,"551,817",0.030747519,green
+339930,"Doll, toy, and game manufacturing","233,884",0.078414858,green
+339940,Office supplies (except paper) manufacturing,"299,109",0.016418742,green
+339950,Sign manufacturing,"545,478",0.014963012,green
+339990,All other miscellaneous manufacturing,"795,401",0.049348699,green
+311111,Dog and cat food manufacturing,"512,647",0.038447474,green
+311119,Other animal food manufacturing,"801,891",0.046978939,green
+311210,Flour milling and malt manufacturing,"373,815",0.055976826,green
+311221,Wet corn milling,"551,472",0.029633429,green
+311225,Fats and oils refining and blending,"68,987",0.276703594,green
+311224,Soybean and other oilseed processing,"701,958",0.062146175,green
+311230,Breakfast cereal manufacturing,"952,649",0.010702788,green
+311300,Sugar and confectionery product manufacturing,"598,108",0.069122967,green
+311410,Frozen food manufacturing,"276,661",0.120465004,green
+311420,"Fruit and vegetable canning, pickling, and drying","16,546",2.685524693,green
+311513,Cheese manufacturing,"278,837",0.138607747,green
+311514,"Dry, condensed, and evaporated dairy product manufacturing","868,817",0.024291663,green
+31151A,Fluid milk and butter manufacturing,"316,248",0.120219051,green
+311520,Ice cream and frozen dessert manufacturing,"827,823",0.008831596,green
+311615,Poultry processing,"137,834",0.422386399,green
+31161A,"Animal (except poultry) slaughtering, rendering, and processing","542,649",0.271386991,green
+311700,Seafood product preparation and packaging,"898,429",0.016360776,green
+311810,Bread and bakery product manufacturing,"241,201",0.205110678,green
+3118A0,"Cookie, cracker, pasta, and tortilla manufacturing","785,135",0.034604255,green
+311910,Snack food manufacturing,"706,923",0.048559737,green
+311920,Coffee and tea manufacturing,"758,348",0.019133696,green
+311930,Flavoring syrup and concentrate manufacturing,"809,693",0.015983826,green
+311940,Seasoning and dressing manufacturing,"274,005",0.078020552,green
+311990,All other food manufacturing,"541,490",0.054320505,green
+312110,Soft drink and ice manufacturing,"296,838",0.160437767,green
+312120,Breweries,"796,046",0.043869331,green
+312130,Wineries,"234,177",0.095824907,green
+312140,Distilleries,"593,905",0.042511864,green
+312200,Tobacco product manufacturing,"46,365",1.255771208,green
+313100,"Fiber, yarn, and thread mills","397,867",0.014042398,green
+313200,Fabric mills,"828,215",0.020966779,green
+313300,Textile and fabric finishing and fabric coating mills,"636,553",0.01598297,green
+314110,Carpet and rug mills,"323,337",0.034685227,green
+314120,Curtain and linen mills,"197,468",0.075667793,green
+314900,Other textile product mills,"25,456",0.679161921,green
+315000,Apparel manufacturing,"284,865",0.377723374,green
+316000,Leather and allied product manufacturing,"444,990",0.107033949,green
+322110,Pulp mills,"363,450",0.029049408,green
+322120,Paper mills,"614,046",0.090397098,green
+322130,Paperboard mills,"1,083,894",0.027876343,green
+322210,Paperboard container manufacturing,"345,315",0.153899971,green
+322220,Paper Bag and Coated and Treated Paper Manufacturing,"457,495",0.052195108,green
+322230,Stationery product manufacturing,"443,477",0.017459748,green
+322291,Sanitary paper product manufacturing,"246,307",0.04571125,green
+322299,All other converted paper product manufacturing,"613,470",0.00973153,green
+323110,Printing,"83,355",0.785210896,green
+323120,Support activities for printing,"1,041,485",0.004436932,green
+324110,Petroleum refineries,"212,496",4.018760086,green
+324121,Asphalt paving mixture and block manufacturing,"796,599",0.016451189,green
+324122,Asphalt shingle and coating materials manufacturing,"130,411",0.081450399,green
+324190,Other petroleum and coal products manufacturing,"365,247",0.096772754,green
+325110,Petrochemical manufacturing,"564,686",0.203348427,green
+325120,Industrial gas manufacturing,"250,251",0.029726108,green
+325130,Synthetic dye and pigment manufacturing,"604,886",0.018866365,green
+325180,Other Basic Inorganic Chemical Manufacturing,"553,091",0.088988908,green
+325190,Other basic organic chemical manufacturing,"447,350",0.35697325,green
+325211,Plastics material and resin manufacturing,"609,565",0.163037513,green
+3252A0,Synthetic rubber and artificial and synthetic fibers and filaments manufacturing,"871,051",0.032358618,green
+325411,Medicinal and botanical manufacturing,"556,446",0.022095578,green
+325412,Pharmaceutical preparation manufacturing,"525,712",0.410949552,green
+325413,In-vitro diagnostic substance manufacturing,"861,576",0.013751549,green
+325414,Biological product (except diagnostic) manufacturing,"227,935",0.163252627,green
+325310,Fertilizer manufacturing,"548,806",0.071138058,green
+325320,Pesticide and other agricultural chemical manufacturing,"25,316",0.640334626,green
+325510,Paint and coating manufacturing,"692,368",0.035176365,green
+325520,Adhesive manufacturing,"207,880",0.058937813,green
+325610,Soap and cleaning compound manufacturing,"268,486",0.181614753,green
+325620,Toilet preparation manufacturing,"174,260",0.211132485,green
+325910,Printing ink manufacturing,"535,562",0.009537642,green
+3259A0,All other chemical product and preparation manufacturing,"773,706",0.056672716,green
+326110,Plastics packaging materials and unlaminated film and sheet manufacturing,"440,757",0.100547475,green
+326120,"Plastics pipe, pipe fitting, and unlaminated profile shape manufacturing","225,848",0.070804233,green
+326130,"Laminated plastics plate, sheet (except packaging), and shape manufacturing","733,284",0.004927153,green
+326140,Polystyrene foam product manufacturing,"780,104",0.009952524,green
+326150,Urethane and other foam product (except polystyrene) manufacturing,"186,397",0.049244386,green
+326160,Plastics bottle manufacturing,"474,201",0.027897451,green
+326190,Other plastics product manufacturing,"395,410",0.257778106,green
+326210,Tire manufacturing,"576,012",0.060842469,green
+326220,Rubber and plastics hoses and belting manufacturing,"273,717",0.029428166,green
+326290,Other rubber product manufacturing,"482,793",0.042544083,green
+423100,Motor vehicle and motor vehicle parts and supplies,"826,607",0.125192428,green
+423400,Professional and commercial equipment and supplies,"843,269",0.22503021,green
+423600,Household appliances and electrical and electronic goods ,"809,392",0.178275792,green
+423800,"Machinery, equipment, and supplies","527,239",0.300728891,green
+423A00,Other durable goods merchant wholesalers,"861,296",0.271908844,green
+424200,Drugs and druggists’ sundries,"727,549",0.187239622,green
+424400,Grocery and related product wholesalers ,"881,599",0.15064332,green
+424700,Petroleum and petroleum products,"129,083",1.24513685,green
+424A00,Other nondurable goods merchant wholesalers,"489,375",0.611328736,green
+425000,Wholesale electronic markets and agents and brokers,"827,273",0.070554702,green
+4200ID,Customs duties,"544,822",0,green
+441000,Motor vehicle and parts dealers,"424,485",0.361562835,green
+445000,Food and beverage stores,"790,671",0.239507962,green
+452000,General merchandise stores,"625,024",0.318568491,green
+444000,Building material and garden equipment and supplies dealers,"294,470",0.377936632,green
+446000,Health and personal care stores,"304,397",0.31455632,green
+447000,Gasoline stations,"659,972",0.10324832,green
+448000,Clothing and clothing accessories stores,"826,202",0.149428348,green
+454000,Nonstore retailers,"377,560",0.42095561,green
+4B0000,All other retail,"662,333",0.279582929,green
+481000,Air transportation,"689,153",0.346957922,green
+482000,Rail transportation,"259,999",0.298608839,green
+483000,Water transportation,"376,061",0.09691504,green
+484000,Truck transportation,"178,465",1.618764453,green
+485000,Transit and ground passenger transportation,"615,038",0.107242235,green
+486000,Pipeline transportation,"633,839",0.062661011,green
+48A000,Scenic and sightseeing transportation and support activities for transportation,"294,374",0.432154334,green
+492000,Couriers and messengers,"472,587",0.151845124,green
+493000,Warehousing and storage,"302,713",0.370367117,green
+511110,Newspaper publishers,"383,253",0.022930023,green
+511120,Periodical Publishers,"359,432",0.032209131,green
+511130,Book publishers,"735,344",0.04419295,green
+5111A0,"Directory, mailing list, and other publishers","696,133",0.016073067,green
+511200,Software publishers,"655,862",0.227503572,green
+512100,Motion picture and video industries,"227,298",0.524145577,green
+512200,Sound recording industries,"742,926",0.022995563,green
+515100,Radio and television broadcasting,"408,725",0.124717214,green
+515200,Cable and other subscription programming,"273,203",0.075797167,green
+517110,Wired telecommunications carriers,"934,855",0.351051179,green
+517210,Wireless telecommunications carriers (except satellite),"441,655",0.452612999,green
+517A00,"Satellite, telecommunications resellers, and all other telecommunications","658,235",0.037836055,green
+518200,"Data processing, hosting, and related services","372,287",0.30009117,green
+519130,Internet publishing and broadcasting and Web search portals,"808,020",0.062862277,green
+5191A0,"News syndicates, libraries, archives and all other information services","829,116",0.010064935,green
+522A00,Nondepository credit intermediation and related activities,"725,598",0.396005887,green
+52A000,Monetary authorities and depository credit intermediation,"856,172",0.482223369,green
+523900,Other financial investment activities,"647,637",0.510552589,green
+523A00,Securities and commodity contracts intermediation and brokerage,"337,257",0.458646631,green
+524113,Direct life insurance carriers,"205,535",0.385365491,green
+5241XX,"Insurance carriers, except direct life","152,152",3.176733922,green
+524200,"Insurance agencies, brokerages, and related activities","569,855",0.52169941,green
+525000,"Funds, trusts, and other financial vehicles","547,578",0.255183918,green
+531HSO,Owner-occupied housing,"119,005",11.09827318,green
+531HST,Tenant-occupied housing,"586,458",0.681893674,green
+531ORE,Other real estate,"862,990",1.063599291,green
+532100,Automotive equipment rental and leasing,"577,461",0.171575123,green
+532400,Commercial and industrial machinery and equipment rental and leasing,"178,309",0.468513082,green
+532A00,General and consumer goods rental,"243,004",0.14276708,green
+533000,Lessors of nonfinancial intangible assets,"594,702",0.262775267,green
+541100,Legal services,"362,361",0.853601497,green
+541511,Custom computer programming services,"278,346",0.758508745,green
+541512,Computer systems design services,"210,049",0.721321684,green
+54151A,"Other computer related services, including facilities management","591,883",0.130809627,green
+541200,"Accounting, tax preparation, bookkeeping, and payroll services","298,597",0.540622515,green
+541300,"Architectural, engineering, and related services","178,157",1.681022349,green
+541610,Management consulting services,"821,778",0.274780936,green
+5416A0,Environmental and other technical consulting services,"619,523",0.071960219,green
+541700,Scientific research and development services,"227,142",2.204434111,green
+541800,"Advertising, public relations, and related services","815,039",0.403308553,green
+541400,Specialized design services,"86,203",0.309477325,green
+541920,Photographic services,"825,346",0.013681535,green
+541940,Veterinary services,"742,074",0.034388754,green
+5419A0,"All other miscellaneous professional, scientific, and technical services ","326,810",0.254371041,green
+550000,Management of companies and enterprises,"869,491",0.535514747,green
+561300,Employment services,"98,872",2.50044502,green
+561700,Services to buildings and dwellings,"871,987",0.162591806,green
+561100,Office administrative services,"334,635",0.136671473,green
+561200,Facilities support services,"270,388",0.09715658,green
+561400,Business support services,"540,028",0.133646762,green
+561500,Travel arrangement and reservation services,"464,410",0.081242875,green
+561600,Investigation and security services,"46,717",1.130594858,green
+561900,Other support services,"459,450",0.07391019,green
+562000,Waste management and remediation services,"255,636",0.378463827,green
+611100,Elementary and secondary schools,"424,236",0.097547212,green
+611A00,"Junior colleges, colleges, universities, and professional schools","621,672",0.357165717,green
+611B00,Other educational services,"340,931",0.215448366,green
+621100,Offices of physicians,"142,667",2.909364398,green
+621200,Offices of dentists,"794,376",0.134891991,green
+621300,Offices of other health practitioners,"316,891",0.259344915,green
+621400,Outpatient care centers,"327,662",0.313502509,green
+621500,Medical and diagnostic laboratories,"39,266",1.326587851,green
+621600,Home health care services,"527,539",0.165506163,green
+621900,Other ambulatory health care services,"136,499",0.248133307,green
+622000,Hospitals,"151,500",5.642766466,green
+623A00,Nursing and community care facilities,"290,983",0.578360029,green
+623B00,"Residential mental health, substance abuse, and other residential care facilities","689,213",0.059666567,green
+624100,Individual and family services,"456,473",0.176312639,green
+624400,Child day care services,"93,039",0.506612835,green
+624A00,"Community food, housing, and other relief services, including rehabilitation services","527,146",0.082787252,green
+711100,Performing arts companies,"851,938",0.034592912,green
+711200,Spectator sports,"223,456",0.149148226,green
+711500,"Independent artists, writers, and performers","267,382",0.125329943,green
+711A00,Promoters of performing arts and sports and agents for public figures,"150,689",0.162533738,green
+712000,"Museums, historical sites, zoos, and parks","132,221",0.109128168,green
+713100,Amusement parks and arcades,"677,597",0.017945781,green
+713200,Gambling industries (except casino hotels),"479,026",0.187968851,green
+713900,Other amusement and recreation industries,"445,147",0.150947905,green
+721000,Accommodation,"668,853",0.261522181,green
+722110,Full-service restaurants,"252,740",1.113104292,green
+722211,Limited-service restaurants,"657,312",0.45575163,green
+722A00,All other food and drinking places,"571,223",0.262282996,green
+811100,Automotive repair and maintenance,"842,254",0.220561665,green
+811200,Electronic and precision equipment repair and maintenance,"288,868",0.163739147,green
+811300,Commercial and industrial machinery and equipment repair and maintenance,"412,162",0.144780299,green
+811400,Personal and household goods repair and maintenance,"596,116",0.059610881,green
+812100,Personal care services,"223,146",0.303451181,green
+812200,Death care services,"736,415",0.026098056,green
+812300,Dry-cleaning and laundry services,"809,186",0.031739303,green
+812900,Other personal services,"359,125",0.17727827,green
+813100,Religious organizations,"166,194",0.495739271,green
+813A00,"Grantmaking, giving, and social advocacy organizations","782,461",0.056002791,green
+813B00,"Civic, social, professional, and similar organizations","142,931",0.508225824,green
+814000,Private households,"697,229",0.02485553,green
+S00500,Federal general government (defense),"34,141",19.0485926,green
+S00600,Federal general government (nondefense),"870,274",0.401463217,green
+491000,Postal service,"1,460,350",0.042597331,green
+S00102,Other federal government enterprises,"704,906",0.01950757,green
+GSLGE,State and local government educational services,"18,179",39.92801834,green
+GSLGH,State and local government hospitals and health services,"881,149",0.067978324,green
+GSLGO,State and local government other services,"827,163",0.882497159,green
+S00203,Other state and local government enterprises,"163,412",0.520426826,green
+S00401,Scrap,"437,054",0.034810347,green
+S00402,Used and secondhand goods,"182,986",0.033297644,green
+S00300,Noncomparable imports,"81,207",2.610609911,green
+S00900,Rest of the world adjustment,"953,951",0.002902665,green
+,Compensation of employees,"185,083,551",0.046332378,
+,"Taxes on production and imports, less subsidies","185,083,551",0.00582478,
+,Gross operating surplus,"185,083,551",0.035662418,
+,Households,"185,083,551",0.076013919,
+,SL Gov,"185,083,551",0.013315959,
+,Fed Gov,"185,083,551",0.016804616,
+,Sav/Inv,"185,083,551",0.034457811,
+,Change in private inventories,"185,083,551",0.000384756,
+,Imports/Exports,"185,083,551",0.014605825,
