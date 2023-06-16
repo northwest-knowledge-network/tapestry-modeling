@@ -23,7 +23,7 @@ regional_calc_df['Output'] = regional_calc_df['Region1'].astype(float) * regiona
 supp_fun_mat = supp_fun_df.copy()
 
 # industry description needs to be removed to convert df to matrix
-supp_fun_mat.drop(columns=['Industry Description'])
+supp_fun_mat = supp_fun_mat.drop(columns=['Industry Description'])
 
 # remove the column names from the matrix 
 supp_mat = supp_fun_mat.values[:, 1:]
@@ -33,4 +33,16 @@ emp_list2 = np.array(emp_df[emp_df['Color']=='green']['Out/Emp'].tolist())
 
 mat_prod = np.matmul(supp_mat, input_list)
 
-regional_calcs_green = np.multiply(mat_prod, emp_list2)
+# create the great region calcs
+regional_calcs_green = list(np.multiply(mat_prod, emp_list2))
+regional_calcs_yellow = regional_calc_df['Output'].tolist()
+# combine the regional calcs
+regional_calcs = regional_calcs_yellow + regional_calcs_green
+
+prod_fun_mat = prod_fun_df.drop(columns=['Unnamed: 0'])
+
+# provide the indices for only the matrix data
+prod_mat = prod_fun_mat.values[:810, :810]
+
+# result is the SAM matrix 
+result = prod_mat * regional_calcs
