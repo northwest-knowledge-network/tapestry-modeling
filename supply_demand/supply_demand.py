@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np 
 import os
 
-file_path = './supp_dem_data/'
+file_path = './supply_demand_data/'
 
 # read in the test data
 input_df = pd.read_csv(file_path + 'InputData.csv', header=1)
@@ -26,8 +26,7 @@ supp_fun_mat = supp_fun_df.copy()
 supp_fun_mat = supp_fun_mat.drop(columns=['Industry Description'])
 
 # remove the column names from the matrix 
-supp_mat = supp_fun_mat.values[:, 1:]
-
+supp_mat = supp_fun_mat.values
 input_list = input_df['Region1'].tolist()
 emp_list2 = np.array(emp_df[emp_df['Color']=='green']['Out/Emp'].tolist())
 
@@ -46,3 +45,5 @@ prod_mat = prod_fun_mat.values[:810, :810]
 
 # result is the SAM matrix 
 result = prod_mat * regional_calcs
+
+print(result)
