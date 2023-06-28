@@ -4,4 +4,4 @@ S_shipments_trip_matrix_v2.csv
 venv/*
 .DS_Store
 example_data/*
-
+supply_demand/output/*

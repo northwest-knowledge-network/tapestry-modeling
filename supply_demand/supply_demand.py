@@ -45,5 +45,6 @@ prod_mat = prod_fun_mat.values[:810, :810]
 
 # result is the SAM matrix 
 result = prod_mat * regional_calcs
-
+dir_path = os.path.dirname(os.path.realpath(__file__))
+pd.DataFrame(result).to_csv(os.path.join(dir_path, 'output/SAM.csv'))
 print(result)
