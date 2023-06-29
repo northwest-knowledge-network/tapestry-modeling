@@ -23,3 +23,35 @@ class Impedances(Base):
     waterimpedence = Column(Float)
     comboimpedence = Column(Float)
     __table_args__ = {'schema': 'us2012'}
+
+### QCEW Tables ###
+class QCEWComp(Base):
+    __tablename__ = 'qcew_processed'
+    id = Column(Integer, primary_key=True)
+    area_fips = Column(String(255))
+    own_code = Column(Integer)
+    bls_own_code = Column(String(255))
+    year = Column(Integer)
+    tap_estabs_count = Column(Integer)
+    tap_emplvl_est_1 = Column(Integer)
+    tap_emplvl_est_2 = Column(Integer)
+    tap_emplvl_est_3 = Column(Integer)
+    tap_emplvl_est_4 = Column(Integer)
+    tap_emplvl_est_5 = Column(Integer)
+    tap_wages_est_1 = Column(Integer)
+    tap_wages_est_2 = Column(Integer)
+    tap_wages_est_3 = Column(Integer)
+    tap_wages_est_4 = Column(Integer)
+    tap_wages_est_5 = Column(Integer)
+    __table_args__ = {'schema': 'qcew'}
+
+class NAICStoBEA(Base):
+    __tablename__ = 'dim_bridge_qnaics6_to_ind409'
+    id = Column(Integer, primary_key=True)
+    bls_own_code = Column(Integer)
+    r_seq = Column(Integer)
+    r_naics6_code = Column(String(255))
+    c_seq = Column(Integer)
+    c_bea_code_2_lvl_6 = Column(String(255))
+    naics_to_io_coeffs = Column(Float)
+    __table_args__ = {'schema': 'qcew'}
