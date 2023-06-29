@@ -18,7 +18,6 @@ from dotenv import load_dotenv
 import os
 from concurrent.futures import ThreadPoolExecutor as Pool
 #from multiprocessing import Pool
-from models import Impedances, Masses
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from itertools import repeat
@@ -26,6 +25,11 @@ from sqlalchemy.orm import scoped_session
 from sqlalchemy.orm.session import close_all_sessions
 import time 
 import numpy as np
+import sys 
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.append(parent_dir)
+from models import Masses, Impedances
 
 # load environment variables
 load_dotenv()
