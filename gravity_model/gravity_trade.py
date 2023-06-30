@@ -2,7 +2,7 @@
 """
 Created on Fri Mar 24 15:07:27 2023
  
-@author: Philip Watson: pwatson@uidaho.edu; code re-factored by Tanner Varrelman tvarrelman@uidaho.edu
+@author: Philip Watson: pwatson@uidaho.edu;
 
 This calculates trade between regions for a single given commodity
 using a fully constrained gravity model
@@ -89,14 +89,20 @@ class GravityModel:
 
     def calculate_shipping_matrix(self):
         """Calculates the shipping matrix."""
-        self.S = np.matmul(self.s_d, self.prob)
-        self.S_rowsum = np.sum(self.S, axis=1)
-        self.S_colsum = np.sum(self.S, axis=0)
-
-        self.total_shipped_supply = sum(self.S_rowsum)
-        self.total_shipped_demand = sum(self.S_colsum)
-
-        self.S_orig = self.S
-
+        S = np.matmul(self.s_d, self.prob)
         # Set any values less than this value to zero
-        #self
+        S[S < 1] = 0
+        row_totals = np.sum(S, axis=1)
+        col_totals = np.sum(S, axis=0)
+
+        row_factor = self.tot_sup / np.sum(row_totals)
+        col_factor = self.tot_dem / np.sum(col_totals)
+
+        S *= col_factor
+
+        S_rowsum = np.sum(S, axis=1)
+        S_colsum = np.sum(S, axis=0)
+
+        self.total_shipped_supply = sum(S_rowsum)
+        self.total_shipped_demand = sum(S_colsum)
+        self.S = S
