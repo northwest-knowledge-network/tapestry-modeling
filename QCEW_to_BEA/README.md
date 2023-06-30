@@ -6,10 +6,12 @@ The data conversion program relies on two scripts: *conversion.py* and *run_conv
 
 Below are the steps for running the conversion:
 
-1. The run program script is run from the command line, accepting three arguments. These include the year, the commodity ownership code, and the employer wage range. To see a list of the arguments and the values that are accepted, run the following command from the command line:
+1. The *run_conversion.py* script is run from the command line, accepting three arguments. These include the year, the commodity ownership code, and the employer wage range. To see a list of the arguments and the values that are accepted, run the following command from the command line:
 
 ```python run_conversion.py -h```
 
 2. Once you have decided upon the arguments, run the following command from the command line:
 
 ```python run_conversion.py -year <year> -ownership <commodity_ownership_code> -employer_wage <wage_range>```
+
+**Currently, the program writes the output to a csv file. In order to run properly, the user must manually create a folder called "output" in the same directory as the script. The program will write the output to this folder.** 
