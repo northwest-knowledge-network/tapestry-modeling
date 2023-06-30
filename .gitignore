@@ -5,3 +5,5 @@ venv/*
 .DS_Store
 example_data/*
 supply_demand/output/*
+QCEW_to_BEA/__pycache__/*
+QCEW_to_BEA/output/*
