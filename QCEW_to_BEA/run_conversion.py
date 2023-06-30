@@ -6,11 +6,13 @@ import sys
 import argparse
 import pandas as pd
 from itertools import product
+from conversion import QCEWtoBEA
 # models are in the parent directory, so we need to adjust the path
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 from models import QCEWComp, NAICStoBEA
+
 
 # load environment variables
 load_dotenv()
@@ -84,9 +86,17 @@ def get_QCEW(args):
     outliers = find_outliers(param_combos, query)
     out_data = query + outliers
     csv_data = pd.DataFrame(out_data, columns=['area_fips', 'own_code', 'naics_code', 'year', 'tap_estabs_count', wage_col_name, emp_col_name])
-    print(len(csv_data) == len(param_combos))
+    return csv_data, wage_col_name, emp_col_name
 
-if __name__ == '__main__':
-    session = Session()
+# get the formatted QCEW data and run the BEA conversion
+def main():
     args = parser.parse_args()
-    get_QCEW(args)
+    qcew_df, wage_name, emp_name = get_QCEW(args)
+    qcew_to_bea = QCEWtoBEA(qcew_df, args.ownership, wage_name, emp_name)
+    qcew_to_bea.bea_conversion()
+    # output is saved to the output folder (not tracked by git)
+    qcew_to_bea.csv_data.to_csv('./output/emp_wage_bea_{0}_{1}_{2}.csv'.format(args.year, args.ownership, args.employer_wage), index=False)
+
+# only run main if this file is being run directly
+if __name__ == '__main__':
+    main()
