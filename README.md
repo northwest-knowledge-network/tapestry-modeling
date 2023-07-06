@@ -18,3 +18,7 @@ Data can be accessed through the [Tapestry Data Portal](https://tapestry.nkn.uid
 ## Tapestry Work Flow
 
 ![diagram](./resources/TapestryDiagram.drawio.png)
+
+## Funding
+
+The Tapestry project was funded in party by the National Institute of Food and Agriculture, US Department of Agriculture, under award number 2019-67023-29636.
