@@ -6,9 +6,10 @@ from decouple import Config, RepositoryEnv
 from ras_models import ExtantMatrix, ExtantRows, ExtantColumns, JobProperties 
 
 class RASProcessor:
-    def __init__(self, database_uri):
+    def __init__(self, database_uri, job_id):
         self.database_uri = database_uri
         self._create_session()
+        self.job_id = job_id
 
     def _create_session(self):
         engine = create_engine(self.database_uri, echo=False)
@@ -16,23 +17,23 @@ class RASProcessor:
         self.db_session = scoped_session(session_factory)
 
     def get_job_properties(self, job_id):
-        query = self.db_session.query(JobProperties.max_ras_iterations).filter(JobProperties.ras_job_id == job_id).all()
+        query = self.db_session.query(JobProperties.max_ras_iterations).filter(JobProperties.ras_job_id == self.job_id).all()
         return query
 
     def get_extant_matrix(self, job_id):
-        query = self.db_session.query(ExtantMatrix.row_id, ExtantMatrix.col_id, ExtantMatrix.amt_original).filter(ExtantMatrix.ras_job_id == job_id).all()
+        query = self.db_session.query(ExtantMatrix.row_id, ExtantMatrix.col_id, ExtantMatrix.amt_original).filter(ExtantMatrix.ras_job_id == self.job_id).all()
         df = pd.DataFrame(query, columns=['row_id', 'col_id', 'matrix'])
         df = df.pivot_table(values='matrix', index='row_id', columns='col_id')
         ex_matrix = df.to_numpy()
         return ex_matrix
 
     def get_bt_rows(self, job_id):
-        query = self.db_session.query(ExtantRows.amt_original).filter(ExtantRows.ras_job_id == job_id).order_by(ExtantRows.row_id).all()
+        query = self.db_session.query(ExtantRows.amt_original).filter(ExtantRows.ras_job_id == self.job_id).order_by(ExtantRows.row_id).all()
         row_totals = np.array(query).flatten()
         return row_totals
 
     def get_bt_cols(self, job_id):
-        query = self.db_session.query(ExtantColumns.amt_original).filter(ExtantColumns.ras_job_id == job_id).order_by(ExtantColumns.col_id).all()
+        query = self.db_session.query(ExtantColumns.amt_original).filter(ExtantColumns.ras_job_id == self.job_id).order_by(ExtantColumns.col_id).all()
         col_totals = np.array(query).flatten()
         return col_totals
     
@@ -56,6 +57,7 @@ class RASProcessor:
             
             row_sums = np.sum(result_array, axis=1)
             col_sums = np.sum(result_array, axis=0)
+            # logic to only perform scaling on non-zero values 
             R = np.ones(row_n)
             S = np.ones(col_n)
             non_zero_rows = row_sums > 0
@@ -80,8 +82,8 @@ class RASProcessor:
 DOTENV_FILE = './.env'
 env_config = Config(RepositoryEnv(DOTENV_FILE))
 db_info = env_config.get('DATABASE_URI2')
-ras_processor = RASProcessor(db_info)
 job_id = 519
+ras_processor = RASProcessor(db_info, job_id)
 job_props = ras_processor.get_job_properties(job_id)
 extant_matrix = ras_processor.get_extant_matrix(job_id)
 bt_rows = ras_processor.get_bt_rows(job_id)
