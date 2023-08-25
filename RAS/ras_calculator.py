@@ -36,19 +36,61 @@ class RASProcessor:
         query = self.db_session.query(ExtantColumns.amt_original).filter(ExtantColumns.ras_job_id == self.job_id).order_by(ExtantColumns.col_id).all()
         col_totals = np.array(query).flatten()
         return col_totals
+
+    def freeze_negatives(self, bt_rows, bt_cols, extant_mat):
+        frozen_matrix = np.copy(extant_mat)
+        frozen_matrix[frozen_matrix < 0] = 0
+
+        frozen_bt_rows = np.copy(bt_rows)
+        frozen_bt_rows[frozen_bt_rows < 0] = 0
+
+        frozen_bt_cols = np.copy(bt_cols)
+        frozen_bt_cols[frozen_bt_cols < 0] = 0
+
+        return frozen_bt_rows, frozen_bt_cols, frozen_matrix
     
-    def bordertotal_qc(self, row_bt, col_bt):
+    def qc_check1(self, row_bt, col_bt):
         if np.sum(row_bt) != np.sum(col_bt):
             exit("error: row border totals != column border totals")
         else:
             print("success: border totals match")
 
-    def matrix_qc(self, mat_data):
-        for val in np.sum(mat_data, axis=1):
-            if val == 0:
-                exit("error: matrix row sum == 0")
+    def qc_check2(self, ras_row_bt, ras_col_bt, ras_mat):
+        row_mask = ras_row_bt < 0
+        col_mask = ras_col_bt < 0
+        ras_mask = ras_mat < 0
 
-    def perform_ras(self, mat_data, row_totals, col_totals, max_iterations=10000, epsilon=0.00001):
+        negative_row = ras_row_bt[row_mask]
+        negative_col = ras_col_bt[col_mask]
+        negative_mat = ras_mat[ras_mask]
+
+        if len(negative_row) > 0:
+            exit("row border total includes negative values")
+        if len(negative_col) > 0:
+            exit("col border total incldues negative values")
+        if len(negative_mat) > 0:
+            exit("matrix contains negative values")
+        print("success: input data do not contain negative values")
+
+    def qc_check3(self, row_bt, extant_mat):
+        qc_row_sums = np.sum(extant_mat, axis=1)
+        if len(row_bt) != len(qc_row_sums):
+            exit("matrix row count != border total row count")
+        for i in range(0, len(qc_row_sums)):
+            if qc_row_sums[i] > 0 and row_bt[i] == 0:
+                exit("row border total == 0 and matrix row sum > 0")
+        print("success: matrix rows and border total rows consistent")
+
+    def qc_check4(self, col_bt, extant_mat):
+        qc_col_sums = np.sum(extant_mat, axis=0)
+        if len(col_bt) != len(qc_col_sums):
+            exit("matrix col count != border total col count")
+        for i in range(0, len(qc_col_sums)):
+            if qc_col_sums[i] > 0 and col_bt[i] == 0:
+                exit("col border total == 0 and matrix col sum > 0")
+        print("success: matrix cols and border total cols consistent")
+
+    def perform_ras(self, row_totals, col_totals, mat_data, max_iterations=10000, epsilon=0.00001):
         result_array = np.copy(mat_data)
         row_n = result_array.shape[0]
         col_n = result_array.shape[1]
@@ -89,20 +131,15 @@ extant_matrix = ras_processor.get_extant_matrix(job_id)
 bt_rows = ras_processor.get_bt_rows(job_id)
 bt_cols = ras_processor.get_bt_cols(job_id)
 
-# remove negatives
-frozen_matrix = np.copy(extant_matrix)
-frozen_matrix[frozen_matrix < 0] = 0
-frozen_matrix[frozen_matrix == 0] = 0
+# prepare data for RAS
+ras_bt_rows, ras_bt_cols, ras_mat = ras_processor.freeze_negatives(bt_rows, bt_cols, extant_matrix)
 
-frozen_bt_rows = np.copy(bt_rows)
-frozen_bt_rows[frozen_bt_rows < 0] = 0
-frozen_bt_rows[frozen_bt_rows == 0] = 0
+# perform checks on unfrozen data
+ras_processor.qc_check1(bt_rows, bt_cols)
+ras_processor.qc_check2(ras_bt_rows, ras_bt_cols, ras_mat)
+ras_processor.qc_check3(bt_rows, extant_matrix)
+ras_processor.qc_check4(bt_cols, extant_matrix)
 
-frozen_bt_cols = np.copy(bt_cols)
-frozen_bt_cols[frozen_bt_cols < 0] = 0
-frozen_bt_cols[frozen_bt_cols == 0] = 0
-
-ras_processor.bordertotal_qc(bt_rows, bt_cols)
-
-result = ras_processor.perform_ras(frozen_matrix, frozen_bt_rows, frozen_bt_cols)
+# after running the checks, perform the ras
+result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat)
 print(result)
