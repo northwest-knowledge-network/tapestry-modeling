@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+"""
+    ORM for the PostgreSQL database tables that will be used by the program
+"""
+
 from sqlalchemy.orm import sessionmaker, relationship, backref, selectinload
 from sqlalchemy import Table, Column, Integer, String, DateTime, Text, Float, ForeignKey, create_engine
 from sqlalchemy.ext.declarative import declarative_base

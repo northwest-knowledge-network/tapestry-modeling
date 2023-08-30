@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu May  4 10:04:35 2023
+ 
+@author: Philip Watson, pwatson@uidaho.edu & Tanner Varrelman, tvarrelman@uidaho.edu
+ 
+"""
+
 import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
@@ -119,27 +127,3 @@ class RASProcessor:
                 break
         print(success_message['success'])
         return result_array
-
-# Example usage:
-DOTENV_FILE = './.env'
-env_config = Config(RepositoryEnv(DOTENV_FILE))
-db_info = env_config.get('DATABASE_URI2')
-job_id = 519
-ras_processor = RASProcessor(db_info, job_id)
-job_props = ras_processor.get_job_properties(job_id)
-extant_matrix = ras_processor.get_extant_matrix(job_id)
-bt_rows = ras_processor.get_bt_rows(job_id)
-bt_cols = ras_processor.get_bt_cols(job_id)
-
-# prepare data for RAS
-ras_bt_rows, ras_bt_cols, ras_mat = ras_processor.freeze_negatives(bt_rows, bt_cols, extant_matrix)
-
-# perform checks on unfrozen data
-ras_processor.qc_check1(bt_rows, bt_cols)
-ras_processor.qc_check2(ras_bt_rows, ras_bt_cols, ras_mat)
-ras_processor.qc_check3(bt_rows, extant_matrix)
-ras_processor.qc_check4(bt_cols, extant_matrix)
-
-# after running the checks, perform the ras
-result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat)
-print(result)
