@@ -11,7 +11,7 @@ import numpy as np
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from decouple import Config, RepositoryEnv
-from ras_models import ExtantMatrix, ExtantRows, ExtantColumns, JobProperties 
+from .ras_models import ExtantMatrix, ExtantRows, ExtantColumns, JobProperties 
 
 class RASProcessor:
     def __init__(self, database_uri, job_id):
@@ -46,16 +46,25 @@ class RASProcessor:
         return col_totals
 
     def freeze_negatives(self, bt_rows, bt_cols, extant_mat):
-        frozen_matrix = np.copy(extant_mat)
-        frozen_matrix[frozen_matrix < 0] = 0
+        ras_matrix = np.copy(extant_mat)
+        ras_matrix[ras_matrix < 0] = 0
 
-        frozen_bt_rows = np.copy(bt_rows)
-        frozen_bt_rows[frozen_bt_rows < 0] = 0
+        ras_bt_rows = np.copy(bt_rows)
+        ras_bt_rows[ras_bt_rows < 0] = 0
 
-        frozen_bt_cols = np.copy(bt_cols)
-        frozen_bt_cols[frozen_bt_cols < 0] = 0
+        ras_bt_cols = np.copy(bt_cols)
+        ras_bt_cols[ras_bt_cols < 0] = 0
 
-        return frozen_bt_rows, frozen_bt_cols, frozen_matrix
+        neg_values_matrix = np.copy(extant_mat)
+        neg_values_matrix[neg_values_matrix >= 0] = 0
+
+        neg_values_bt_rows = np.copy(bt_rows)
+        neg_values_bt_rows[neg_values_bt_rows >= 0] = 0
+
+        neg_values_bt_cols = np.copy(bt_cols)
+        neg_values_bt_cols[neg_values_bt_cols >= 0] = 0
+
+        return ras_bt_rows, ras_bt_cols, ras_matrix, neg_values_bt_rows, neg_values_bt_cols, neg_values_matrix
     
     def qc_check1(self, row_bt, col_bt):
         if np.sum(row_bt) != np.sum(col_bt):
@@ -98,7 +107,7 @@ class RASProcessor:
                 exit("col border total == 0 and matrix col sum > 0")
         print("success: matrix cols and border total cols consistent")
 
-    def perform_ras(self, row_totals, col_totals, mat_data, max_iterations=10000, epsilon=0.00001):
+    def perform_ras(self, row_totals, col_totals, mat_data, frozen_mat, max_iterations=10000, epsilon=0.00001):
         result_array = np.copy(mat_data)
         row_n = result_array.shape[0]
         col_n = result_array.shape[1]
@@ -110,20 +119,22 @@ class RASProcessor:
             # logic to only perform scaling on non-zero values 
             R = np.ones(row_n)
             S = np.ones(col_n)
+            # mask out zeros
             non_zero_rows = row_sums > 0
             non_zero_cols = col_sums > 0 
-
+            # row and column multipliers for non-zero values, otherwise the scaler is 1
             R[non_zero_rows] = row_totals[non_zero_rows] / row_sums[non_zero_rows]
             S[non_zero_cols] = col_totals[non_zero_cols] / col_sums[non_zero_cols]
            
             result_array = result_array * np.outer(R, S)
 
-            row_sums = np.sum(result_array, axis=1)
-            col_sums = np.sum(result_array, axis=0)
-            row_error = np.max(np.abs(row_totals - row_sums))
-            col_error = np.max(np.abs(col_totals - col_sums))
+            row_sums_final = np.sum(result_array, axis=1)
+            col_sums_final = np.sum(result_array, axis=0)
+            row_error = np.max(np.abs(row_totals - row_sums_final))
+            col_error = np.max(np.abs(col_totals - col_sums_final))
             if row_error < epsilon and col_error < epsilon:
                 success_message['success'] = 'RAS completed, threshold reached at {0} iterations'.format(i)
                 break
+        final_out = np.add(result_array, frozen_mat)
         print(success_message['success'])
-        return result_array
+        return final_out
