@@ -11,7 +11,7 @@ import numpy as np
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from decouple import Config, RepositoryEnv
-from .ras_models import ExtantMatrix, ExtantRows, ExtantColumns, JobProperties 
+from ras_models import ExtantMatrix, ExtantRows, ExtantColumns, JobProperties 
 
 class RASProcessor:
     def __init__(self, database_uri, job_id):
