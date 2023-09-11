@@ -12,6 +12,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from decouple import Config, RepositoryEnv
 from ras_models import ExtantMatrix, ExtantRows, ExtantColumns, JobProperties 
+import csv
 
 class RASProcessor:
     def __init__(self, database_uri, job_id):
@@ -37,13 +38,13 @@ class RASProcessor:
 
     def get_bt_rows(self, job_id):
         query = self.db_session.query(ExtantRows.amt_original).filter(ExtantRows.ras_job_id == self.job_id).order_by(ExtantRows.row_id).all()
-        row_totals = np.array(query).flatten()
-        return row_totals
+        bt_row_totals = np.array(query).flatten()
+        return bt_row_totals
 
     def get_bt_cols(self, job_id):
         query = self.db_session.query(ExtantColumns.amt_original).filter(ExtantColumns.ras_job_id == self.job_id).order_by(ExtantColumns.col_id).all()
-        col_totals = np.array(query).flatten()
-        return col_totals
+        bt_col_totals = np.array(query).flatten()
+        return bt_col_totals
 
     def freeze_negatives(self, bt_rows, bt_cols, extant_mat):
         ras_matrix = np.copy(extant_mat)
@@ -107,11 +108,15 @@ class RASProcessor:
                 exit("col border total == 0 and matrix col sum > 0")
         print("success: matrix cols and border total cols consistent")
 
-    def perform_ras(self, row_totals, col_totals, mat_data, frozen_mat, max_iterations=10000, epsilon=0.00001):
+    def perform_ras(self, bt_row_totals, bt_col_totals, mat_data, frozen_mat, max_iterations=10000, epsilon=0.00001):
         result_array = np.copy(mat_data)
         row_n = result_array.shape[0]
         col_n = result_array.shape[1]
         success_message = {'success': 'RAS completed, max iterations reached'}
+        file = open('epsilon_log_{0}.csv'.format(self.job_id), 'w', newline='')
+        writer = csv.writer(file)
+        field = ['iteration', 'row_epsilon', 'column_epsilon']
+        writer.writerow(field)
         for i in range(max_iterations):
             
             row_sums = np.sum(result_array, axis=1)
@@ -123,18 +128,20 @@ class RASProcessor:
             non_zero_rows = row_sums > 0
             non_zero_cols = col_sums > 0 
             # row and column multipliers for non-zero values, otherwise the scaler is 1
-            R[non_zero_rows] = row_totals[non_zero_rows] / row_sums[non_zero_rows]
-            S[non_zero_cols] = col_totals[non_zero_cols] / col_sums[non_zero_cols]
+            R[non_zero_rows] = bt_row_totals[non_zero_rows] / row_sums[non_zero_rows]
+            S[non_zero_cols] = bt_col_totals[non_zero_cols] / col_sums[non_zero_cols]
            
             result_array = result_array * np.outer(R, S)
 
             row_sums_final = np.sum(result_array, axis=1)
             col_sums_final = np.sum(result_array, axis=0)
-            row_error = np.max(np.abs(row_totals - row_sums_final))
-            col_error = np.max(np.abs(col_totals - col_sums_final))
+            row_error = np.max(np.abs(bt_row_totals - row_sums_final))
+            col_error = np.max(np.abs(bt_col_totals - col_sums_final))
+            writer.writerow([i, row_error, col_error])
             if row_error < epsilon and col_error < epsilon:
                 success_message['success'] = 'RAS completed, threshold reached at {0} iterations'.format(i)
                 break
+        file.close()
         final_out = np.add(result_array, frozen_mat)
         print(success_message['success'])
         return final_out
