@@ -13,3 +13,4 @@ RAS/__pycache__/*
 venv3/*
 Untitled.ipynb
 .ipynb_checkpoints/*
+RAS_logs/*
