@@ -18,7 +18,7 @@ class ExtantMatrix(Base):
     amt_original = Column(Float)
     amt_to_freeze_adhoc = Column(Float)
     amt_after_ras = Column(Float)
-    __table_args__ = {'schema': 'qcew'}
+    __table_args__ = {'schema': 'ras'}
 
 class ExtantRows(Base):
     __tablename__ = 'fact_extant_bordertotals_rows'
@@ -27,7 +27,7 @@ class ExtantRows(Base):
     row_id = Column(Integer)
     amt_original = Column(Float)
     amt_after_ras = Column(Float)
-    __table_args__ = {'schema': 'qcew'}
+    __table_args__ = {'schema': 'ras'}
     
 class ExtantColumns(Base):
     __tablename__ = 'fact_extant_bordertotals_columns'
@@ -36,7 +36,7 @@ class ExtantColumns(Base):
     col_id = Column(Integer)
     amt_original = Column(Float)
     amt_after_ras = Column(Float)
-    __table_args__ = {'schema': 'qcew'}
+    __table_args__ = {'schema': 'ras'}
 
 class JobProperties(Base):
     __tablename__ = 'properties_ras_jobs'
@@ -46,4 +46,4 @@ class JobProperties(Base):
     bordertotal_tolerance_absolutevalue = Column(Float)
     matrix_solution_tolerance_absolutevalue = Column(Float)
     max_ras_iterations = Column(Float)
-    __table_args__ = {'schema': 'qcew'}
+    __table_args__ = {'schema': 'ras'}
