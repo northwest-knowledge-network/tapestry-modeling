@@ -10,7 +10,7 @@ import argparse
 def main(job_id, iterations=None, epsilon=None):
     # get the db URl (formatted consistent with: https://docs.sqlalchemy.org/en/20/core/engines.html#database-urls)
     # this accesses a .env file with our database secrets
-    DOTENV_FILE = './.env'
+    DOTENV_FILE = '/nethome/tanner/economic_modeling/.env'
     env_config = Config(RepositoryEnv(DOTENV_FILE))
     db_info = env_config.get('DATABASE_URI2')
 
@@ -33,14 +33,13 @@ def main(job_id, iterations=None, epsilon=None):
 
     # after running the checks, perform the ras
     if iterations and epsilon:
-        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, iterations, epsilon)
+        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, extant_matrix, iterations, epsilon)
     elif iterations:
-        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, iterations, 0.00001)
+        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, extant_matrix, iterations, 0.00001)
     elif epsilon:
-        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, 10000, epsilon)
+        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, extant_matrix, 10000, epsilon)
     else:
-        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat)
-    print(result)
+        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, extant_matrix)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='This script runs RAS given data that is stored in the PostgreSQL database.')
