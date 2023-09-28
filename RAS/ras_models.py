@@ -18,6 +18,7 @@ class ExtantMatrix(Base):
     amt_original = Column(Float)
     amt_to_freeze_adhoc = Column(Float)
     amt_after_ras = Column(Float)
+    amt_frozen = Column(Float)
     __table_args__ = {'schema': 'ras'}
 
 class ExtantRows(Base):

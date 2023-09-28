@@ -156,17 +156,27 @@ class RASProcessor:
         output_df = output_df.melt(id_vars='row_id', var_name='col_id', value_name='amt_after_ras')
         output_df['col_id'] = output_df['col_id'] + 1 
 
+        frozen_df = pd.DataFrame(frozen_mat)
+        frozen_df['row_id'] = frozen_df.index + 1
+        frozen_df = frozen_df.melt(id_vars='row_id', var_name='col_id', value_name='amt_frozen')
+        frozen_df['col_id'] = frozen_df['col_id'] + 1
+
         final_df = pd.merge(original_df, output_df, how='inner',
-                  left_on=['row_id', 'col_id'],
-                  right_on=['row_id', 'col_id'])
+                    left_on=['row_id', 'col_id'],
+                    right_on=['row_id', 'col_id'])
+        final_df = pd.merge(final_df, frozen_df, how='inner',
+                    left_on=['row_id', 'col_id'],
+                    right_on=['row_id', 'col_id'])
         for index, row in final_df.iterrows():
             row_id = row['row_id']
             col_id = row['col_id']
             matrix_value = row['amt_original']
             new_matrix_value = row['amt_after_ras']
+            frozen_val = row['amt_frozen']
             db_record = self.db_session.query(ExtantMatrix).filter_by(row_id=row_id, col_id=col_id).first()
             if db_record:
                 db_record.amt_after_ras = new_matrix_value
+                db_record.amt_frozen = frozen_val
             else:
                 print('Unable to find data; row_id: {0}, col_id: {1}, amt_original: {2}'.format(row_id, col_id, matrix_value))
         self.db_session.commit()
