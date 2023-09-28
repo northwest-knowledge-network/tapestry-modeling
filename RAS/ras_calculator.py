@@ -109,7 +109,7 @@ class RASProcessor:
                 exit("col border total == 0 and matrix col sum > 0")
         print("success: matrix cols and border total cols consistent")
 
-    def perform_ras(self, bt_row_totals, bt_col_totals, mat_data, frozen_mat, max_iterations=1000, epsilon=0.00001):
+    def perform_ras(self, bt_row_totals, bt_col_totals, mat_data, frozen_mat, original_mat, max_iterations=1000, epsilon=0.00001):
         result_array = np.copy(mat_data)
         row_n = result_array.shape[0]
         col_n = result_array.shape[1]
@@ -120,23 +120,23 @@ class RASProcessor:
         writer = csv.writer(file)
         field = ['iteration', 'row_epsilon', 'column_epsilon']
         writer.writerow(field)
-        R = np.zeros(row_n)
-        S = np.zeros(col_n)
+        R = np.zeros(row_n, dtype=float)
+        S = np.zeros(col_n, dtype=float)
         for i in range(max_iterations):
-            
-            row_sums = np.sum(result_array, axis=1)
-            col_sums = np.sum(result_array, axis=0)
+            row_sums = np.sum(result_array, axis=1, dtype=float)
+            col_sums = np.sum(result_array, axis=0, dtype=float)
+       
             # mask out zeros
             non_zero_rows = row_sums > 0
             non_zero_cols = col_sums > 0 
             # row and column multipliers for non-zero values, otherwise the scaler is 1
             R[non_zero_rows] = bt_row_totals[non_zero_rows] / row_sums[non_zero_rows]
             S[non_zero_cols] = bt_col_totals[non_zero_cols] / col_sums[non_zero_cols]
-
+            
             result_array *= np.outer(R, S)
 
-            row_sums_final = np.sum(result_array, axis=1)
-            col_sums_final = np.sum(result_array, axis=0)
+            row_sums_final = np.sum(result_array, axis=1, dtype=float)
+            col_sums_final = np.sum(result_array, axis=0, dtype=float)
             row_error = np.max(np.abs(bt_row_totals - row_sums_final))
             col_error = np.max(np.abs(bt_col_totals - col_sums_final))
             writer.writerow([i, row_error, col_error])
@@ -146,4 +146,28 @@ class RASProcessor:
         file.close()
         final_out = np.add(result_array, frozen_mat)
         print(success_message['success'])
+        original_df = pd.DataFrame(original_mat)
+        original_df['row_id'] = original_df.index + 1
+        original_df = original_df.melt(id_vars='row_id', var_name='col_id', value_name='amt_original')
+        original_df['col_id'] = original_df['col_id'] + 1
+
+        output_df = pd.DataFrame(final_out)
+        output_df['row_id'] = output_df.index + 1
+        output_df = output_df.melt(id_vars='row_id', var_name='col_id', value_name='amt_after_ras')
+        output_df['col_id'] = output_df['col_id'] + 1 
+
+        final_df = pd.merge(original_df, output_df, how='inner',
+                  left_on=['row_id', 'col_id'],
+                  right_on=['row_id', 'col_id'])
+        for index, row in final_df.iterrows():
+            row_id = row['row_id']
+            col_id = row['col_id']
+            matrix_value = row['amt_original']
+            new_matrix_value = row['amt_after_ras']
+            db_record = self.db_session.query(ExtantMatrix).filter_by(row_id=row_id, col_id=col_id).first()
+            if db_record:
+                db_record.amt_after_ras = new_matrix_value
+            else:
+                print('Unable to find data; row_id: {0}, col_id: {1}, amt_original: {2}'.format(row_id, col_id, matrix_value))
+        self.db_session.commit()
         return final_out
