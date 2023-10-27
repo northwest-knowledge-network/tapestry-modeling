@@ -173,7 +173,7 @@ class RASProcessor:
             matrix_value = row['amt_original']
             new_matrix_value = row['amt_after_ras']
             frozen_val = row['amt_frozen']
-            db_record = self.db_session.query(ExtantMatrix).filter_by(row_id=row_id, col_id=col_id).first()
+            db_record = self.db_session.query(ExtantMatrix).filter_by(row_id=row_id, col_id=col_id, ras_job_id=self.job_id).first()
             if db_record:
                 db_record.amt_after_ras = new_matrix_value
                 db_record.amt_frozen = frozen_val
