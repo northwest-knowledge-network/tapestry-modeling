@@ -33,13 +33,13 @@ def main(job_id, iterations=None, epsilon=None):
 
     # after running the checks, perform the ras
     if iterations and epsilon:
-        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, extant_matrix, iterations, epsilon)
+        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, extant_matrix, frozen_bt_rows, frozen_bt_cols, iterations, epsilon)
     elif iterations:
-        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, extant_matrix, iterations, 0.00001)
+        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, extant_matrix, frozen_bt_rows, frozen_bt_cols, iterations, 0.00001)
     elif epsilon:
-        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, extant_matrix, 10000, epsilon)
+        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, extant_matrix, frozen_bt_rows, frozen_bt_cols, 10000, epsilon)
     else:
-        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, extant_matrix)
+        result = ras_processor.perform_ras(ras_bt_rows, ras_bt_cols, ras_mat, frozen_mat, extant_matrix, frozen_bt_rows, frozen_bt_cols)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='This script runs RAS given data that is stored in the PostgreSQL database.')

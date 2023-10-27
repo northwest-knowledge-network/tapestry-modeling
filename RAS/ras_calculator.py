@@ -109,7 +109,7 @@ class RASProcessor:
                 exit("col border total == 0 and matrix col sum > 0")
         print("success: matrix cols and border total cols consistent")
 
-    def perform_ras(self, bt_row_totals, bt_col_totals, mat_data, frozen_mat, original_mat, max_iterations=1000, epsilon=0.00001):
+    def perform_ras(self, bt_row_totals, bt_col_totals, mat_data, frozen_mat, original_mat, frozen_bt_rows, frozen_bt_cols, max_iterations=1000, epsilon=0.00001):
         result_array = np.copy(mat_data)
         row_n = result_array.shape[0]
         col_n = result_array.shape[1]
@@ -144,6 +144,22 @@ class RASProcessor:
                 success_message['success'] = 'RAS completed, threshold reached at {0} iterations'.format(i)
                 break
         file.close()
+        # pull row and column bt totals to update
+        db_row_record = self.db_session.query(ExtantRows).filter_by(ras_job_id=self.job_id).order_by(ExtantRows.row_id)
+        row_index = 0
+        bt_row_final = np.add(frozen_bt_rows, row_sums_final)
+        for row_record in db_row_record:
+            row_record.amt_after_ras = bt_row_final[row_index]
+            row_index += 1
+
+        db_col_record = self.db_session.query(ExtantColumns).filter_by(ras_job_id=self.job_id).order_by(ExtantColumns.col_id)
+        col_index = 0
+        bt_col_final = np.add(frozen_bt_cols, col_sums_final)
+        for col_record in db_col_record:
+            col_record.amt_after_ras = bt_col_final[col_index]
+            col_index += 1
+
+        # create add balanced matrix to the frozen values
         final_out = np.add(result_array, frozen_mat)
         print(success_message['success'])
         original_df = pd.DataFrame(original_mat)
@@ -178,6 +194,6 @@ class RASProcessor:
                 db_record.amt_after_ras = new_matrix_value
                 db_record.amt_frozen = frozen_val
             else:
-                print('Unable to find data; row_id: {0}, col_id: {1}, amt_original: {2}'.format(row_id, col_id, matrix_value))
+                print('Unable to find data; row_id: {0}, col_id: {1}, amt_original: {2}'.format(row_id, col_id, matrix_value))    
         self.db_session.commit()
         return final_out
