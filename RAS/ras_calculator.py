@@ -27,23 +27,23 @@ class RASProcessor:
         self.db_session = scoped_session(session_factory)
 
     def get_job_properties(self, job_id):
-        query = self.db_session.query(JobProperties.max_ras_iterations).filter(JobProperties.ras_job_id == self.job_id).all()
+        query = self.db_session.query(JobProperties.max_ras_iterations).filter(JobProperties.id == self.job_id).all()
         return query
 
     def get_extant_matrix(self, job_id):
-        query = self.db_session.query(ExtantMatrix.row_id, ExtantMatrix.col_id, ExtantMatrix.amt_original).filter(ExtantMatrix.ras_job_id == self.job_id).all()
+        query = self.db_session.query(ExtantMatrix.row_id, ExtantMatrix.col_id, ExtantMatrix.amt_original).filter(ExtantMatrix.ras_id == self.job_id).all()
         df = pd.DataFrame(query, columns=['row_id', 'col_id', 'matrix'])
         df = df.pivot_table(values='matrix', index='row_id', columns='col_id')
         ex_matrix = df.to_numpy()
         return ex_matrix
 
     def get_bt_rows(self, job_id):
-        query = self.db_session.query(ExtantRows.amt_original).filter(ExtantRows.ras_job_id == self.job_id).order_by(ExtantRows.row_id).all()
+        query = self.db_session.query(ExtantRows.amt_original).filter(ExtantRows.ras_id == self.job_id).order_by(ExtantRows.row_id).all()
         bt_row_totals = np.array(query).flatten()
         return bt_row_totals
 
     def get_bt_cols(self, job_id):
-        query = self.db_session.query(ExtantColumns.amt_original).filter(ExtantColumns.ras_job_id == self.job_id).order_by(ExtantColumns.col_id).all()
+        query = self.db_session.query(ExtantColumns.amt_original).filter(ExtantColumns.ras_id == self.job_id).order_by(ExtantColumns.col_id).all()
         bt_col_totals = np.array(query).flatten()
         return bt_col_totals
 
@@ -114,12 +114,12 @@ class RASProcessor:
         row_n = result_array.shape[0]
         col_n = result_array.shape[1]
         success_message = {'success': 'RAS completed, max iterations reached'}
-        if not os.path.exists('./RAS_logs'):
-            os.makedirs('./RAS_logs')
-        file = open('./RAS_logs/epsilon_log_{0}.csv'.format(self.job_id), 'w', newline='')
-        writer = csv.writer(file)
-        field = ['iteration', 'row_epsilon', 'column_epsilon']
-        writer.writerow(field)
+        #if not os.path.exists('./RAS_logs'):
+        #    os.makedirs('./RAS_logs')
+        #file = open('./RAS_logs/epsilon_log_{0}.csv'.format(self.job_id), 'w', newline='')
+        #writer = csv.writer(file)
+        #field = ['iteration', 'row_epsilon', 'column_epsilon']
+        #writer.writerow(field)
         R = np.zeros(row_n, dtype=float)
         S = np.zeros(col_n, dtype=float)
         for i in range(max_iterations):
@@ -139,20 +139,20 @@ class RASProcessor:
             col_sums_final = np.sum(result_array, axis=0, dtype=float)
             row_error = np.max(np.abs(bt_row_totals - row_sums_final))
             col_error = np.max(np.abs(bt_col_totals - col_sums_final))
-            writer.writerow([i, row_error, col_error])
+            #writer.writerow([i, row_error, col_error])
             if row_error < epsilon and col_error < epsilon:
                 success_message['success'] = 'RAS completed, threshold reached at {0} iterations'.format(i)
                 break
-        file.close()
+        #file.close()
         # pull row and column bt totals to update
-        db_row_record = self.db_session.query(ExtantRows).filter_by(ras_job_id=self.job_id).order_by(ExtantRows.row_id)
+        db_row_record = self.db_session.query(ExtantRows).filter_by(ras_id=self.job_id).order_by(ExtantRows.row_id)
         row_index = 0
         bt_row_final = np.add(frozen_bt_rows, row_sums_final)
         for row_record in db_row_record:
             row_record.amt_after_ras = bt_row_final[row_index]
             row_index += 1
 
-        db_col_record = self.db_session.query(ExtantColumns).filter_by(ras_job_id=self.job_id).order_by(ExtantColumns.col_id)
+        db_col_record = self.db_session.query(ExtantColumns).filter_by(ras_id=self.job_id).order_by(ExtantColumns.col_id)
         col_index = 0
         bt_col_final = np.add(frozen_bt_cols, col_sums_final)
         for col_record in db_col_record:
@@ -189,7 +189,7 @@ class RASProcessor:
             matrix_value = row['amt_original']
             new_matrix_value = row['amt_after_ras']
             frozen_val = row['amt_frozen']
-            db_record = self.db_session.query(ExtantMatrix).filter_by(row_id=row_id, col_id=col_id, ras_job_id=self.job_id).first()
+            db_record = self.db_session.query(ExtantMatrix).filter_by(row_id=row_id, col_id=col_id, ras_id=self.job_id).first()
             if db_record:
                 db_record.amt_after_ras = new_matrix_value
                 db_record.amt_frozen = frozen_val

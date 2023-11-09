@@ -12,7 +12,7 @@ Base = declarative_base()
 class ExtantMatrix(Base):
     __tablename__ = 'fact_extant_matrix'
     id = Column(Integer, primary_key = True)
-    ras_job_id = Column(Integer)
+    ras_id = Column(Integer)
     row_id = Column(Integer)
     col_id = Column(Integer)
     amt_original = Column(Float)
@@ -24,7 +24,7 @@ class ExtantMatrix(Base):
 class ExtantRows(Base):
     __tablename__ = 'fact_extant_bordertotals_rows'
     id = Column(Integer, primary_key = True)
-    ras_job_id = Column(Integer)
+    ras_id = Column(Integer)
     row_id = Column(Integer)
     amt_original = Column(Float)
     amt_after_ras = Column(Float)
@@ -33,7 +33,7 @@ class ExtantRows(Base):
 class ExtantColumns(Base):
     __tablename__ = 'fact_extant_bordertotals_columns'
     id = Column(Integer, primary_key = True)
-    ras_job_id = Column(Integer)
+    ras_id = Column(Integer)
     col_id = Column(Integer)
     amt_original = Column(Float)
     amt_after_ras = Column(Float)
@@ -42,7 +42,7 @@ class ExtantColumns(Base):
 class JobProperties(Base):
     __tablename__ = 'properties_ras_jobs'
     id = Column(Integer, primary_key = True)
-    ras_job_id = Column(Integer)
+    external_ras_job_id = Column(Integer)
     bordertotal_control_total = Column(Float)
     bordertotal_tolerance_absolutevalue = Column(Float)
     matrix_solution_tolerance_absolutevalue = Column(Float)
