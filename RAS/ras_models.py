@@ -4,7 +4,7 @@
 """
 
 from sqlalchemy.orm import sessionmaker, relationship, backref, selectinload
-from sqlalchemy import Table, Column, Integer, String, DateTime, Text, Float, ForeignKey, create_engine
+from sqlalchemy import Table, Column, Integer, String, DateTime, Text, Float, ForeignKey, create_engine, Enum
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -47,4 +47,5 @@ class JobProperties(Base):
     bordertotal_tolerance_absolutevalue = Column(Float)
     matrix_solution_tolerance_absolutevalue = Column(Float)
     max_ras_iterations = Column(Float)
+    status = Column(Enum('running', 'completed', 'pending'))
     __table_args__ = {'schema': 'ras'}

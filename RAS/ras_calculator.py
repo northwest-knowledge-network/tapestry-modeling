@@ -27,7 +27,7 @@ class RASProcessor:
         self.db_session = scoped_session(session_factory)
 
     def get_job_properties(self, job_id):
-        query = self.db_session.query(JobProperties.max_ras_iterations).filter(JobProperties.id == self.job_id).all()
+        query = self.db_session.query(JobProperties.max_ras_iterations).filter(JobProperties.id == self.job_id).first()
         return query
 
     def get_extant_matrix(self, job_id):
@@ -195,5 +195,7 @@ class RASProcessor:
                 db_record.amt_frozen = frozen_val
             else:
                 print('Unable to find data; row_id: {0}, col_id: {1}, amt_original: {2}'.format(row_id, col_id, matrix_value))    
+        job = self.db_session.query(JobProperties).filter(JobProperties.id == self.job_id).first()
+        job.status = 'completed'
         self.db_session.commit()
         return final_out
