@@ -122,7 +122,7 @@ class RASProcessor:
         #writer.writerow(field)
         R = np.zeros(row_n, dtype=float)
         S = np.zeros(col_n, dtype=float)
-        for i in range(max_iterations):
+        for iteration in range(max_iterations):
             row_sums = np.sum(result_array, axis=1, dtype=float)
             col_sums = np.sum(result_array, axis=0, dtype=float)
        
@@ -141,7 +141,7 @@ class RASProcessor:
             col_error = np.max(np.abs(bt_col_totals - col_sums_final))
             #writer.writerow([i, row_error, col_error])
             if row_error < epsilon and col_error < epsilon:
-                success_message['success'] = 'RAS completed, threshold reached at {0} iterations'.format(i)
+                success_message['success'] = 'RAS completed, threshold reached at {0} iterations'.format(iteration)
                 break
         #file.close()
         # pull row and column bt totals to update
@@ -197,5 +197,8 @@ class RASProcessor:
                 print('Unable to find data; row_id: {0}, col_id: {1}, amt_original: {2}'.format(row_id, col_id, matrix_value))    
         job = self.db_session.query(JobProperties).filter(JobProperties.id == self.job_id).first()
         job.status = 'completed'
+        job.final_row_tolerance = row_error
+        job.final_col_tolerance = col_error
+        job.final_iteration = iteration
         self.db_session.commit()
         return final_out

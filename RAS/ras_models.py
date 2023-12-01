@@ -48,4 +48,7 @@ class JobProperties(Base):
     matrix_solution_tolerance_absolutevalue = Column(Float)
     max_ras_iterations = Column(Float)
     status = Column(Enum('running', 'completed', 'pending'))
+    final_row_tolerance = Column(Float)
+    final_col_tolerance = Column(Float)
+    final_iteration = Column(Integer)
     __table_args__ = {'schema': 'ras'}
