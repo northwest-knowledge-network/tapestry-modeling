@@ -70,9 +70,9 @@ class RASProcessor:
     
     def qc_check1(self, row_bt, col_bt):
         if np.sum(row_bt) != np.sum(col_bt):
-            exit("error: row border totals != column border totals")
+            self._qc_check1 = {'error': 'row border totals != column border totals'}
         else:
-            print("success: border totals match")
+            self._qc_check1 = {'success': 'success: border totals match'}
 
     def qc_check2(self, ras_row_bt, ras_col_bt, ras_mat):
         row_mask = ras_row_bt < 0
@@ -84,30 +84,35 @@ class RASProcessor:
         negative_mat = ras_mat[ras_mask]
 
         if len(negative_row) > 0:
-            exit("row border total includes negative values")
+            self._qc_check2 = {'error': 'row border total includes negative values'}
         if len(negative_col) > 0:
-            exit("col border total incldues negative values")
+            self._qc_check2 = {'error': 'col border total includes negative values'}
         if len(negative_mat) > 0:
-            exit("matrix contains negative values")
-        print("success: input data do not contain negative values")
+            self._qc_check2 = {'error': 'matrix contains negative values'}
+        self._qc_check2 = {'success': 'input data do not contain negative values'}
 
     def qc_check3(self, row_bt, extant_mat):
         qc_row_sums = np.sum(extant_mat, axis=1)
         if len(row_bt) != len(qc_row_sums):
-            exit("matrix row count != border total row count")
+            self._qc_check3 = {'error': 'matrix row count != border total row count'}
         for i in range(0, len(qc_row_sums)):
             if qc_row_sums[i] > 0 and row_bt[i] == 0:
-                exit("row border total == 0 and matrix row sum > 0")
-        print("success: matrix rows and border total rows consistent")
+                self._qc_check3 = {'error': 'row border total == 0 and matrix row sum > 0'}
+        self._qc_check3 = {'success': 'matrix rows and border total rows consistent'}
 
     def qc_check4(self, col_bt, extant_mat):
         qc_col_sums = np.sum(extant_mat, axis=0)
         if len(col_bt) != len(qc_col_sums):
-            exit("matrix col count != border total col count")
+            self._qc_check4 = {'error': 'matrix col count != border total col count'}
         for i in range(0, len(qc_col_sums)):
             if qc_col_sums[i] > 0 and col_bt[i] == 0:
-                exit("col border total == 0 and matrix col sum > 0")
-        print("success: matrix cols and border total cols consistent")
+                self._qc_check4 = {'error': 'col border total == 0 and matrix col sum > 0'}
+        self._qc_check4 = {'success': 'matrix cols and border total cols consistent'}
+
+    def finish_job_error(self):
+        job = self.db_session.query(JobProperties).filter(JobProperties.id == self.job_id).first()
+        job.status = 'error'
+        self.db_session.commit()
 
     def perform_ras(self, bt_row_totals, bt_col_totals, mat_data, frozen_mat, original_mat, frozen_bt_rows, frozen_bt_cols, max_iterations=1000, epsilon=0.00001):
         result_array = np.copy(mat_data)

@@ -47,7 +47,7 @@ class JobProperties(Base):
     bordertotal_tolerance_absolutevalue = Column(Float)
     matrix_solution_tolerance_absolutevalue = Column(Float)
     max_ras_iterations = Column(Float)
-    status = Column(Enum('running', 'completed', 'pending'))
+    status = Column(Enum('running', 'completed', 'pending', 'error'))
     final_row_tolerance = Column(Float)
     final_col_tolerance = Column(Float)
     final_iteration = Column(Integer)

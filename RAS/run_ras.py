@@ -26,10 +26,27 @@ def main(job_id, iterations=None, epsilon=None):
     ras_bt_rows, ras_bt_cols, ras_mat, frozen_bt_rows, frozen_bt_cols, frozen_mat = ras_processor.freeze_negatives(bt_rows, bt_cols, extant_matrix)
 
     # perform checks on unfrozen data
+    error_url = 'https://tapestry-toolbox.nkn.uidaho.edu/error'
     ras_processor.qc_check1(bt_rows, bt_cols)
+    if ras_processor._qc_check1.get('error'):
+        ras_processor.finish_job_error()
+        raise ValueError(ras_processor._qc_check1.get('error'))
+        exit(ras_processor._qc_check1.get('error'))
     ras_processor.qc_check2(ras_bt_rows, ras_bt_cols, ras_mat)
+    if ras_processor._qc_check2.get('error'):
+        ras_processor.finish_job_error()
+        raise ValueError(ras_processor._qc_check2.get('error'))
+        exit(ras_processor._qc_check2.get('error'))
     ras_processor.qc_check3(bt_rows, extant_matrix)
+    if ras_processor._qc_check3.get('error'):
+        ras_processor.finish_job_error()
+        raise ValueError(ras_processor._qc_check3.get('error'))
+        exit(ras_processor._qc_check3.get('error'))
     ras_processor.qc_check4(bt_cols, extant_matrix)
+    if ras_processor._qc_check4.get('error'):
+        ras_processor.finish_job_error()
+        raise ValueError(ras_processor._qc_check4.get('error'))
+        exit(ras_processor._qc_check4.get('error'))
 
     # after running the checks, perform the ras
     if iterations and epsilon:
