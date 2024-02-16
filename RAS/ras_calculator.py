@@ -31,8 +31,11 @@ class RASProcessor:
         return query
 
     def get_extant_matrix(self, job_id):
-        query = self.db_session.query(ExtantMatrix.row_id, ExtantMatrix.col_id, ExtantMatrix.amt_original).filter(ExtantMatrix.ras_id == self.job_id).all()
-        df = pd.DataFrame(query, columns=['row_id', 'col_id', 'matrix'])
+        query = self.db_session.query(ExtantMatrix.row_id, ExtantMatrix.col_id, ExtantMatrix.amt_original, ExtantMatrix.amt_to_freeze_adhoc).filter(ExtantMatrix.ras_id == self.job_id).all()
+        df = pd.DataFrame(query, columns=['row_id', 'col_id', 'matrix', 'amt_to_freeze'])
+        for i in range(0, len(df)):
+            if pd.notna(df['amt_to_freeze'][i]):
+                df.loc[i, 'matrix'] = 0
         df = df.pivot_table(values='matrix', index='row_id', columns='col_id')
         ex_matrix = df.to_numpy()
         return ex_matrix
@@ -67,6 +70,15 @@ class RASProcessor:
         neg_values_bt_cols[neg_values_bt_cols >= 0] = 0
 
         return ras_bt_rows, ras_bt_cols, ras_matrix, neg_values_bt_rows, neg_values_bt_cols, neg_values_matrix
+    
+    def qc_check0(self, row_bt, col_bt, ras_mat):
+        mat_shape = ras_mat.shape
+        if mat_shape[0] != len(row_bt):
+            self._qc_check0 = {'error': 'border total row length does not match the matrix row length'}
+        elif mat_shape[1] != len(col_bt):
+            self._qc_check0 = {'error': 'border total column length does match the matrix column length'}
+        else:
+            self._qc_check0 = {'success': 'border total files match the matrix dimensions'}
     
     def qc_check1(self, row_bt, col_bt):
         if np.sum(row_bt) != np.sum(col_bt):
@@ -119,12 +131,6 @@ class RASProcessor:
         row_n = result_array.shape[0]
         col_n = result_array.shape[1]
         success_message = {'success': 'RAS completed, max iterations reached'}
-        #if not os.path.exists('./RAS_logs'):
-        #    os.makedirs('./RAS_logs')
-        #file = open('./RAS_logs/epsilon_log_{0}.csv'.format(self.job_id), 'w', newline='')
-        #writer = csv.writer(file)
-        #field = ['iteration', 'row_epsilon', 'column_epsilon']
-        #writer.writerow(field)
         R = np.zeros(row_n, dtype=float)
         S = np.zeros(col_n, dtype=float)
         for iteration in range(max_iterations):
@@ -144,11 +150,9 @@ class RASProcessor:
             col_sums_final = np.sum(result_array, axis=0, dtype=float)
             row_error = np.max(np.abs(bt_row_totals - row_sums_final))
             col_error = np.max(np.abs(bt_col_totals - col_sums_final))
-            #writer.writerow([i, row_error, col_error])
             if row_error < epsilon and col_error < epsilon:
                 success_message['success'] = 'RAS completed, threshold reached at {0} iterations'.format(iteration)
                 break
-        #file.close()
         # pull row and column bt totals to update
         db_row_record = self.db_session.query(ExtantRows).filter_by(ras_id=self.job_id).order_by(ExtantRows.row_id)
         row_index = 0
@@ -166,7 +170,6 @@ class RASProcessor:
 
         # create add balanced matrix to the frozen values
         final_out = np.add(result_array, frozen_mat)
-        print(success_message['success'])
         original_df = pd.DataFrame(original_mat)
         original_df['row_id'] = original_df.index + 1
         original_df = original_df.melt(id_vars='row_id', var_name='col_id', value_name='amt_original')
@@ -195,11 +198,18 @@ class RASProcessor:
             new_matrix_value = row['amt_after_ras']
             frozen_val = row['amt_frozen']
             db_record = self.db_session.query(ExtantMatrix).filter_by(row_id=row_id, col_id=col_id, ras_id=self.job_id).first()
+            # given all of the qc checks, this condition should never evaluate to false
             if db_record:
-                db_record.amt_after_ras = new_matrix_value
-                db_record.amt_frozen = frozen_val
+                # matrix data is frozen in the get_extant_matrix() function.
+                # Here we ensure that the val was frozen, and updated the amt_frozen and the amt_after_ras value
+                if db_record.amt_to_freeze_adhoc and new_matrix_value == 0:
+                    db_record.amt_after_ras = db_record.amt_to_freeze_adhoc
+                    db_record.amt_frozen = db_record.amt_to_freeze_adhoc
+                else:
+                    db_record.amt_after_ras = new_matrix_value
+                    db_record.amt_frozen = frozen_val
             else:
-                print('Unable to find data; row_id: {0}, col_id: {1}, amt_original: {2}'.format(row_id, col_id, matrix_value))    
+                continue  
         job = self.db_session.query(JobProperties).filter(JobProperties.id == self.job_id).first()
         job.status = 'completed'
         job.final_row_tolerance = row_error

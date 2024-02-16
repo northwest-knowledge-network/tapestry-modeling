@@ -6,11 +6,12 @@
 from ras_calculator import RASProcessor
 from decouple import Config, RepositoryEnv
 import argparse
+import numpy as np
 
 def main(job_id, iterations=None, epsilon=None):
     # get the db URl (formatted consistent with: https://docs.sqlalchemy.org/en/20/core/engines.html#database-urls)
     # this accesses a .env file with our database secrets
-    DOTENV_FILE = '/nethome/tanner/economic_modeling/.env'
+    DOTENV_FILE = ''
     env_config = Config(RepositoryEnv(DOTENV_FILE))
     db_info = env_config.get('DATABASE_URI2')
 
@@ -19,14 +20,18 @@ def main(job_id, iterations=None, epsilon=None):
     # this is using the ORM defined in ras_models.py
     job_props = ras_processor.get_job_properties(job_id)
     extant_matrix = ras_processor.get_extant_matrix(job_id)
-    bt_rows = ras_processor.get_bt_rows(job_id)
-    bt_cols = ras_processor.get_bt_cols(job_id)
+    bt_rows = np.array(ras_processor.get_bt_rows(job_id), dtype='f')
+    bt_cols = np.array(ras_processor.get_bt_cols(job_id), dtype='f')
 
     # prepare data for RAS
     ras_bt_rows, ras_bt_cols, ras_mat, frozen_bt_rows, frozen_bt_cols, frozen_mat = ras_processor.freeze_negatives(bt_rows, bt_cols, extant_matrix)
 
     # perform checks on unfrozen data
-    error_url = 'https://tapestry-toolbox.nkn.uidaho.edu/error'
+    ras_processor.qc_check0(bt_rows, bt_cols, ras_mat)
+    if ras_processor._qc_check0.get('error'):
+        ras_processor.finish_job_error()
+        raise ValueError(ras_processor._qc_check0.get('error'))
+        exit(ras_processor._qc_check1.get('error'))
     ras_processor.qc_check1(bt_rows, bt_cols)
     if ras_processor._qc_check1.get('error'):
         ras_processor.finish_job_error()
